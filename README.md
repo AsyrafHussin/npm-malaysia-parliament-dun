@@ -30,12 +30,16 @@ A Comprehensive NPM Package of Malaysia Parliament (Parlimen) and State Assembly
   - [getStates](#getstates)
   - [getParliaments](#getparliaments)
   - [getDuns](#getduns)
+  - [getDunsByState](#getdunsbystate)
   - [findParliament](#findparliament)
   - [findDun](#finddun)
   - [getStateByParliament](#getstatebyparliament)
   - [getStateByDun](#getstatebydun)
   - [getParliamentByDun](#getparliamentbydun)
   - [searchAll](#searchall)
+  - [getRandomState](#getrandomstate)
+  - [getRandomParliament](#getrandomparliament)
+  - [getRandomDun](#getrandomdun)
 - [TypeScript Support](#typescript-support)
 - [Testing](#testing)
   - [Running the Tests](#running-the-tests)
@@ -80,12 +84,16 @@ import {
   getStates,
   getParliaments,
   getDuns,
+  getDunsByState,
   findParliament,
   findDun,
   getStateByParliament,
   getStateByDun,
   getParliamentByDun,
   searchAll,
+  getRandomState,
+  getRandomParliament,
+  getRandomDun,
 } from "malaysia-parliament-dun";
 ```
 
@@ -98,12 +106,16 @@ const {
   getStates,
   getParliaments,
   getDuns,
+  getDunsByState,
   findParliament,
   findDun,
   getStateByParliament,
   getStateByDun,
   getParliamentByDun,
   searchAll,
+  getRandomState,
+  getRandomParliament,
+  getRandomDun,
 } = require("malaysia-parliament-dun");
 ```
 
@@ -120,12 +132,16 @@ const {
   getStates,
   getParliaments,
   getDuns,
+  getDunsByState,
   findParliament,
   findDun,
   getStateByParliament,
   getStateByDun,
   getParliamentByDun,
   searchAll,
+  getRandomState,
+  getRandomParliament,
+  getRandomDun,
 } = window.malaysiaParliamentDun;
 ```
 
@@ -239,6 +255,33 @@ Example result:
   { "code": "N16", "name": "Apam Putra" }
 ]
 ```
+
+### getDunsByState
+
+Returns all DUN seats across all parliaments for a given state.
+
+**Parameters:**
+
+- `stateName` (string): The name of the state.
+
+Example usage:
+
+```js
+const duns = getDunsByState('Kelantan');
+```
+
+Example result:
+
+```js
+[
+  { "code": "N01", "name": "Salor" },
+  { "code": "N02", "name": "Chetok" },
+  { "code": "N03", "name": "Pangkalan Kubor" },
+  ...
+]
+```
+
+Returns `[]` for federal territories (no DUN seats) or invalid state.
 
 ### findParliament
 
@@ -640,6 +683,71 @@ Result:
 - **Auto-complete**: Get suggestions across all constituency types
 - **Data validation**: Check if input exists anywhere in Malaysia's electoral data
 - **Flexible lookup**: No need to know if user is searching for a state, parliament, or DUN
+
+### getRandomState
+
+Returns a random state name. Useful for testing and demos.
+
+```js
+const state = getRandomState();
+// e.g. "Selangor"
+```
+
+### getRandomParliament
+
+Returns a random parliament seat. Optionally filter by state.
+
+**Parameters:**
+
+- `stateName` (string, optional): Limit to a specific state.
+
+```js
+// Random from any state
+const parliament = getRandomParliament();
+
+// Random from Kelantan
+const kelantanParliament = getRandomParliament('Kelantan');
+```
+
+Example result:
+
+```js
+{
+  "code": "P023",
+  "name": "Rantau Panjang",
+  "dun": [...]
+}
+```
+
+Returns `null` if an invalid state is provided.
+
+### getRandomDun
+
+Returns a random DUN seat. Optionally filter by state and/or parliament.
+
+**Parameters:**
+
+- `stateName` (string, optional): Limit to a specific state.
+- `parliamentName` (string, optional): Limit to a specific parliament.
+
+```js
+// Random from anywhere
+const dun = getRandomDun();
+
+// Random from Kelantan
+const kelantanDun = getRandomDun('Kelantan');
+
+// Random from specific parliament
+const specificDun = getRandomDun('Kelantan', 'Rantau Panjang');
+```
+
+Example result:
+
+```js
+{ "code": "N16", "name": "Apam Putra" }
+```
+
+Returns `null` if an invalid state or parliament is provided.
 
 ## TypeScript Support
 

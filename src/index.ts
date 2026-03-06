@@ -185,6 +185,13 @@ export const getDuns = (stateName: string | null, parliamentName: string | null)
   return dunsByStateParliament.get(key) ?? [];
 };
 
+export const getDunsByState = (stateName: string | null): Dun[] => {
+  if (!stateName) return [];
+  const parliaments = stateParliamentsMap.get(stateName.toLowerCase());
+  if (!parliaments) return [];
+  return parliaments.flatMap(p => p.dun);
+};
+
 export const findParliament = (
   query: string | string[] | null,
   isExactMatch: boolean = true
@@ -308,6 +315,35 @@ export const getParliamentByDun = (
   }
 
   return null;
+};
+
+export const getRandomState = (): string => {
+  return allStateNames[Math.floor(Math.random() * allStateNames.length)];
+};
+
+export const getRandomParliament = (stateName?: string | null): Parliament | null => {
+  if (stateName) {
+    const parliaments = stateParliamentsMap.get(stateName.toLowerCase());
+    if (!parliaments || parliaments.length === 0) return null;
+    return parliaments[Math.floor(Math.random() * parliaments.length)];
+  }
+  const entry = allParliamentEntries[Math.floor(Math.random() * allParliamentEntries.length)];
+  return entry ? { code: entry.code, name: entry.name, dun: entry.dun } : null;
+};
+
+export const getRandomDun = (stateName?: string | null, parliamentName?: string | null): Dun | null => {
+  if (stateName && parliamentName) {
+    const duns = getDuns(stateName, parliamentName);
+    if (duns.length === 0) return null;
+    return duns[Math.floor(Math.random() * duns.length)];
+  }
+  if (stateName) {
+    const duns = getDunsByState(stateName);
+    if (duns.length === 0) return null;
+    return duns[Math.floor(Math.random() * duns.length)];
+  }
+  const entry = allDunEntries[Math.floor(Math.random() * allDunEntries.length)];
+  return entry ? { code: entry.code, name: entry.name } : null;
 };
 
 export const searchAll = (query: string | null): SearchAllResult => {

@@ -2,7 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0] - 2025-03-07
+## [1.1.0] - 2026-03-07
+
+### Added
+
+- `getDunsByState(stateName)` — get all DUN seats across all parliaments for a given state
+- `getRandomState()` — returns a random state name
+- `getRandomParliament(stateName?)` — returns a random parliament seat, optionally filtered by state
+- `getRandomDun(stateName?, parliamentName?)` — returns a random DUN seat, optionally filtered by state and/or parliament
+
+### Fixed
+
+- Normalized `repository.url` in `package.json` to `git+https://...` format
+
+### CI
+
+- Added `ci.yml` workflow to auto-run tests on every push to `main` and every PR across Node 18, 20 and 22
+
+## [1.0.0] - 2026-03-07
 
 ### Added
 
