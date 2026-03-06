@@ -1,0 +1,3801 @@
+[
+  {
+    "name": "Perlis",
+    "parliament": [
+      {
+        "code": "P001",
+        "name": "Padang Besar",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Titi Tinggi"
+          },
+          {
+            "code": "N02",
+            "name": "Beseri"
+          },
+          {
+            "code": "N03",
+            "name": "Chuping"
+          },
+          {
+            "code": "N04",
+            "name": "Mata Ayer"
+          },
+          {
+            "code": "N05",
+            "name": "Santan"
+          }
+        ]
+      },
+      {
+        "code": "P002",
+        "name": "Kangar",
+        "dun": [
+          {
+            "code": "N06",
+            "name": "Bintong"
+          },
+          {
+            "code": "N07",
+            "name": "Sena"
+          },
+          {
+            "code": "N08",
+            "name": "Indera Kayangan"
+          },
+          {
+            "code": "N09",
+            "name": "Kuala Perlis"
+          },
+          {
+            "code": "N10",
+            "name": "Kayang"
+          }
+        ]
+      },
+      {
+        "code": "P003",
+        "name": "Arau",
+        "dun": [
+          {
+            "code": "N11",
+            "name": "Pauh"
+          },
+          {
+            "code": "N12",
+            "name": "Tambun Tulang"
+          },
+          {
+            "code": "N13",
+            "name": "Guar Sanji"
+          },
+          {
+            "code": "N14",
+            "name": "Simpang Empat"
+          },
+          {
+            "code": "N15",
+            "name": "Sanglang"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kedah",
+    "parliament": [
+      {
+        "code": "P004",
+        "name": "Langkawi",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Ayer Hangat"
+          },
+          {
+            "code": "N02",
+            "name": "Kuah"
+          }
+        ]
+      },
+      {
+        "code": "P005",
+        "name": "Jerlun",
+        "dun": [
+          {
+            "code": "N03",
+            "name": "Kota Siputeh"
+          },
+          {
+            "code": "N04",
+            "name": "Ayer Hitam"
+          }
+        ]
+      },
+      {
+        "code": "P006",
+        "name": "Kubang Pasu",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Bukit Kayu Hitam"
+          },
+          {
+            "code": "N06",
+            "name": "Jitra"
+          }
+        ]
+      },
+      {
+        "code": "P007",
+        "name": "Padang Terap",
+        "dun": [
+          {
+            "code": "N07",
+            "name": "Kuala Nerang"
+          },
+          {
+            "code": "N08",
+            "name": "Pedu"
+          }
+        ]
+      },
+      {
+        "code": "P008",
+        "name": "Pokok Sena",
+        "dun": [
+          {
+            "code": "N09",
+            "name": "Bukit Lada"
+          },
+          {
+            "code": "N10",
+            "name": "Bukit Pinang"
+          },
+          {
+            "code": "N11",
+            "name": "Derga"
+          }
+        ]
+      },
+      {
+        "code": "P009",
+        "name": "Alor Setar",
+        "dun": [
+          {
+            "code": "N12",
+            "name": "Suka Menanti"
+          },
+          {
+            "code": "N13",
+            "name": "Kota Darul Aman"
+          },
+          {
+            "code": "N14",
+            "name": "Alor Mengkudu"
+          }
+        ]
+      },
+      {
+        "code": "P010",
+        "name": "Kuala Kedah",
+        "dun": [
+          {
+            "code": "N15",
+            "name": "Anak Bukit"
+          },
+          {
+            "code": "N16",
+            "name": "Kubang Rotan"
+          },
+          {
+            "code": "N17",
+            "name": "Pengkalan Kundor"
+          }
+        ]
+      },
+      {
+        "code": "P011",
+        "name": "Pendang",
+        "dun": [
+          {
+            "code": "N18",
+            "name": "Tokai"
+          },
+          {
+            "code": "N19",
+            "name": "Sungai Tiang"
+          }
+        ]
+      },
+      {
+        "code": "P012",
+        "name": "Jerai",
+        "dun": [
+          {
+            "code": "N20",
+            "name": "Sungai Limau"
+          },
+          {
+            "code": "N21",
+            "name": "Guar Chempedak"
+          },
+          {
+            "code": "N22",
+            "name": "Gurun"
+          }
+        ]
+      },
+      {
+        "code": "P013",
+        "name": "Sik",
+        "dun": [
+          {
+            "code": "N23",
+            "name": "Belantek"
+          },
+          {
+            "code": "N24",
+            "name": "Jeneri"
+          }
+        ]
+      },
+      {
+        "code": "P014",
+        "name": "Merbok",
+        "dun": [
+          {
+            "code": "N25",
+            "name": "Bukit Selambau"
+          },
+          {
+            "code": "N26",
+            "name": "Tanjong Dawai"
+          }
+        ]
+      },
+      {
+        "code": "P015",
+        "name": "Sungai Petani",
+        "dun": [
+          {
+            "code": "N27",
+            "name": "Pantai Merdeka"
+          },
+          {
+            "code": "N28",
+            "name": "Bakar Arang"
+          },
+          {
+            "code": "N29",
+            "name": "Sidam"
+          }
+        ]
+      },
+      {
+        "code": "P016",
+        "name": "Baling",
+        "dun": [
+          {
+            "code": "N30",
+            "name": "Bayu"
+          },
+          {
+            "code": "N31",
+            "name": "Kupang"
+          },
+          {
+            "code": "N32",
+            "name": "Kuala Ketil"
+          }
+        ]
+      },
+      {
+        "code": "P017",
+        "name": "Padang Serai",
+        "dun": [
+          {
+            "code": "N33",
+            "name": "Merbau Pulas"
+          },
+          {
+            "code": "N34",
+            "name": "Lunas"
+          }
+        ]
+      },
+      {
+        "code": "P018",
+        "name": "Kulim-Bandar Baharu",
+        "dun": [
+          {
+            "code": "N35",
+            "name": "Kulim"
+          },
+          {
+            "code": "N36",
+            "name": "Bandar Baharu"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kelantan",
+    "parliament": [
+      {
+        "code": "P019",
+        "name": "Tumpat",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Pengkalan Kubor"
+          },
+          {
+            "code": "N02",
+            "name": "Kelaboran"
+          },
+          {
+            "code": "N03",
+            "name": "Pasir Pekan"
+          },
+          {
+            "code": "N04",
+            "name": "Wakaf Bharu"
+          }
+        ]
+      },
+      {
+        "code": "P020",
+        "name": "Pengkalan Chepa",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Kijang"
+          },
+          {
+            "code": "N06",
+            "name": "Chempaka"
+          },
+          {
+            "code": "N07",
+            "name": "Panchor"
+          }
+        ]
+      },
+      {
+        "code": "P021",
+        "name": "Kota Bharu",
+        "dun": [
+          {
+            "code": "N08",
+            "name": "Tanjong Mas"
+          },
+          {
+            "code": "N09",
+            "name": "Kota Lama"
+          },
+          {
+            "code": "N10",
+            "name": "Bunut Payong"
+          }
+        ]
+      },
+      {
+        "code": "P022",
+        "name": "Pasir Mas",
+        "dun": [
+          {
+            "code": "N11",
+            "name": "Tendong"
+          },
+          {
+            "code": "N12",
+            "name": "Pengkalan Pasir"
+          },
+          {
+            "code": "N13",
+            "name": "Meranti"
+          }
+        ]
+      },
+      {
+        "code": "P023",
+        "name": "Rantau Panjang",
+        "dun": [
+          {
+            "code": "N14",
+            "name": "Chetok"
+          },
+          {
+            "code": "N15",
+            "name": "Gual Periok"
+          },
+          {
+            "code": "N16",
+            "name": "Apam Putra"
+          }
+        ]
+      },
+      {
+        "code": "P024",
+        "name": "Kubang Kerian",
+        "dun": [
+          {
+            "code": "N17",
+            "name": "Salor"
+          },
+          {
+            "code": "N18",
+            "name": "Pasir Tumboh"
+          },
+          {
+            "code": "N19",
+            "name": "Demit"
+          }
+        ]
+      },
+      {
+        "code": "P025",
+        "name": "Bachok",
+        "dun": [
+          {
+            "code": "N20",
+            "name": "Tawang"
+          },
+          {
+            "code": "N21",
+            "name": "Pantai Irama"
+          },
+          {
+            "code": "N22",
+            "name": "Jelawat"
+          }
+        ]
+      },
+      {
+        "code": "P026",
+        "name": "Ketereh",
+        "dun": [
+          {
+            "code": "N23",
+            "name": "Melor"
+          },
+          {
+            "code": "N24",
+            "name": "Kadok"
+          },
+          {
+            "code": "N25",
+            "name": "Kok Lanas"
+          }
+        ]
+      },
+      {
+        "code": "P027",
+        "name": "Tanah Merah",
+        "dun": [
+          {
+            "code": "N26",
+            "name": "Bukit Panau"
+          },
+          {
+            "code": "N27",
+            "name": "Gual Ipoh"
+          },
+          {
+            "code": "N28",
+            "name": "Kemahang"
+          }
+        ]
+      },
+      {
+        "code": "P028",
+        "name": "Pasir Puteh",
+        "dun": [
+          {
+            "code": "N29",
+            "name": "Selising"
+          },
+          {
+            "code": "N30",
+            "name": "Limbongan"
+          },
+          {
+            "code": "N31",
+            "name": "Semerak"
+          },
+          {
+            "code": "N32",
+            "name": "Gaal"
+          }
+        ]
+      },
+      {
+        "code": "P029",
+        "name": "Machang",
+        "dun": [
+          {
+            "code": "N33",
+            "name": "Pulai Chondong"
+          },
+          {
+            "code": "N34",
+            "name": "Temangan"
+          },
+          {
+            "code": "N35",
+            "name": "Kemuning"
+          }
+        ]
+      },
+      {
+        "code": "P030",
+        "name": "Jeli",
+        "dun": [
+          {
+            "code": "N36",
+            "name": "Bukit Bunga"
+          },
+          {
+            "code": "N37",
+            "name": "Air Lanas"
+          },
+          {
+            "code": "N38",
+            "name": "Kuala Balah"
+          }
+        ]
+      },
+      {
+        "code": "P031",
+        "name": "Kuala Krai",
+        "dun": [
+          {
+            "code": "N39",
+            "name": "Mengkebang"
+          },
+          {
+            "code": "N40",
+            "name": "Guchil"
+          },
+          {
+            "code": "N41",
+            "name": "Manek Urai"
+          },
+          {
+            "code": "N42",
+            "name": "Dabong"
+          }
+        ]
+      },
+      {
+        "code": "P032",
+        "name": "Gua Musang",
+        "dun": [
+          {
+            "code": "N43",
+            "name": "Nenggiri"
+          },
+          {
+            "code": "N44",
+            "name": "Paloh"
+          },
+          {
+            "code": "N45",
+            "name": "Galas"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Terengganu",
+    "parliament": [
+      {
+        "code": "P033",
+        "name": "Besut",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Kuala Besut"
+          },
+          {
+            "code": "N02",
+            "name": "Kota Putera"
+          },
+          {
+            "code": "N03",
+            "name": "Jertih"
+          },
+          {
+            "code": "N04",
+            "name": "Hulu Besut"
+          }
+        ]
+      },
+      {
+        "code": "P034",
+        "name": "Setiu",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Jabi"
+          },
+          {
+            "code": "N06",
+            "name": "Permaisuri"
+          },
+          {
+            "code": "N07",
+            "name": "Langkap"
+          },
+          {
+            "code": "N08",
+            "name": "Batu Rakit"
+          }
+        ]
+      },
+      {
+        "code": "P035",
+        "name": "Kuala Nerus",
+        "dun": [
+          {
+            "code": "N09",
+            "name": "Tepuh"
+          },
+          {
+            "code": "N10",
+            "name": "Buluh Gading"
+          },
+          {
+            "code": "N11",
+            "name": "Seberang Takir"
+          },
+          {
+            "code": "N12",
+            "name": "Bukit Tunggal"
+          }
+        ]
+      },
+      {
+        "code": "P036",
+        "name": "Kuala Terengganu",
+        "dun": [
+          {
+            "code": "N13",
+            "name": "Wakaf Mempelam"
+          },
+          {
+            "code": "N14",
+            "name": "Bandar"
+          },
+          {
+            "code": "N15",
+            "name": "Ladang"
+          },
+          {
+            "code": "N16",
+            "name": "Batu Buruk"
+          }
+        ]
+      },
+      {
+        "code": "P037",
+        "name": "Marang",
+        "dun": [
+          {
+            "code": "N17",
+            "name": "Alur Limbat"
+          },
+          {
+            "code": "N18",
+            "name": "Bukit Payung"
+          },
+          {
+            "code": "N19",
+            "name": "Ru Rendang"
+          },
+          {
+            "code": "N20",
+            "name": "Pengkalan Berangan"
+          }
+        ]
+      },
+      {
+        "code": "P038",
+        "name": "Hulu Terengganu",
+        "dun": [
+          {
+            "code": "N21",
+            "name": "Telemung"
+          },
+          {
+            "code": "N22",
+            "name": "Manir"
+          },
+          {
+            "code": "N23",
+            "name": "Kuala Berang"
+          },
+          {
+            "code": "N24",
+            "name": "Ajil"
+          }
+        ]
+      },
+      {
+        "code": "P039",
+        "name": "Dungun",
+        "dun": [
+          {
+            "code": "N25",
+            "name": "Bukit Besi"
+          },
+          {
+            "code": "N26",
+            "name": "Rantau Abang"
+          },
+          {
+            "code": "N27",
+            "name": "Sura"
+          },
+          {
+            "code": "N28",
+            "name": "Paka"
+          }
+        ]
+      },
+      {
+        "code": "P040",
+        "name": "Kemaman",
+        "dun": [
+          {
+            "code": "N29",
+            "name": "Kemasik"
+          },
+          {
+            "code": "N30",
+            "name": "Kijal"
+          },
+          {
+            "code": "N31",
+            "name": "Cukai"
+          },
+          {
+            "code": "N32",
+            "name": "Air Putih"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pulau Pinang",
+    "parliament": [
+      {
+        "code": "P041",
+        "name": "Kepala Batas",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Penaga"
+          },
+          {
+            "code": "N02",
+            "name": "Bertam"
+          },
+          {
+            "code": "N03",
+            "name": "Pinang Tunggal"
+          }
+        ]
+      },
+      {
+        "code": "P042",
+        "name": "Tasek Gelugor",
+        "dun": [
+          {
+            "code": "N04",
+            "name": "Permatang Berangan"
+          },
+          {
+            "code": "N05",
+            "name": "Sungai Dua"
+          },
+          {
+            "code": "N06",
+            "name": "Telok Ayer Tawar"
+          }
+        ]
+      },
+      {
+        "code": "P043",
+        "name": "Bagan",
+        "dun": [
+          {
+            "code": "N07",
+            "name": "Sungai Puyu"
+          },
+          {
+            "code": "N08",
+            "name": "Bagan Jermal"
+          },
+          {
+            "code": "N09",
+            "name": "Bagan Dalam"
+          }
+        ]
+      },
+      {
+        "code": "P044",
+        "name": "Permatang Pauh",
+        "dun": [
+          {
+            "code": "N10",
+            "name": "Seberang Jaya"
+          },
+          {
+            "code": "N11",
+            "name": "Permatang Pasir"
+          },
+          {
+            "code": "N12",
+            "name": "Penanti"
+          }
+        ]
+      },
+      {
+        "code": "P045",
+        "name": "Bukit Mertajam",
+        "dun": [
+          {
+            "code": "N13",
+            "name": "Berapit"
+          },
+          {
+            "code": "N14",
+            "name": "Machang Bubuk"
+          },
+          {
+            "code": "N15",
+            "name": "Padang Lalang"
+          }
+        ]
+      },
+      {
+        "code": "P046",
+        "name": "Batu Kawan",
+        "dun": [
+          {
+            "code": "N16",
+            "name": "Perai"
+          },
+          {
+            "code": "N17",
+            "name": "Bukit Tengah"
+          },
+          {
+            "code": "N18",
+            "name": "Bukit Tambun"
+          }
+        ]
+      },
+      {
+        "code": "P047",
+        "name": "Nibong Tebal",
+        "dun": [
+          {
+            "code": "N19",
+            "name": "Jawi"
+          },
+          {
+            "code": "N20",
+            "name": "Sungai Bakap"
+          },
+          {
+            "code": "N21",
+            "name": "Sungai Acheh"
+          }
+        ]
+      },
+      {
+        "code": "P048",
+        "name": "Bukit Bendera",
+        "dun": [
+          {
+            "code": "N22",
+            "name": "Tanjong Bunga"
+          },
+          {
+            "code": "N23",
+            "name": "Air Putih"
+          },
+          {
+            "code": "N24",
+            "name": "Kebun Bunga"
+          },
+          {
+            "code": "N25",
+            "name": "Pulau Tikus"
+          }
+        ]
+      },
+      {
+        "code": "P049",
+        "name": "Tanjong",
+        "dun": [
+          {
+            "code": "N26",
+            "name": "Padang Kota"
+          },
+          {
+            "code": "N27",
+            "name": "Pengkalan Kota"
+          },
+          {
+            "code": "N28",
+            "name": "Komtar"
+          }
+        ]
+      },
+      {
+        "code": "P050",
+        "name": "Jelutong",
+        "dun": [
+          {
+            "code": "N29",
+            "name": "Datok Keramat"
+          },
+          {
+            "code": "N30",
+            "name": "Sungai Pinang"
+          },
+          {
+            "code": "N31",
+            "name": "Batu Lancang"
+          }
+        ]
+      },
+      {
+        "code": "P051",
+        "name": "Bukit Gelugor",
+        "dun": [
+          {
+            "code": "N32",
+            "name": "Seri Delima"
+          },
+          {
+            "code": "N33",
+            "name": "Air Itam"
+          },
+          {
+            "code": "N34",
+            "name": "Paya Terubong"
+          }
+        ]
+      },
+      {
+        "code": "P052",
+        "name": "Bayan Baru",
+        "dun": [
+          {
+            "code": "N35",
+            "name": "Batu Uban"
+          },
+          {
+            "code": "N36",
+            "name": "Pantai Jerejak"
+          },
+          {
+            "code": "N37",
+            "name": "Batu Maung"
+          }
+        ]
+      },
+      {
+        "code": "P053",
+        "name": "Balik Pulau",
+        "dun": [
+          {
+            "code": "N38",
+            "name": "Bayan Lepas"
+          },
+          {
+            "code": "N39",
+            "name": "Pulau Betong"
+          },
+          {
+            "code": "N40",
+            "name": "Telok Bahang"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Perak",
+    "parliament": [
+      {
+        "code": "P054",
+        "name": "Gerik",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Pengkalan Hulu"
+          },
+          {
+            "code": "N02",
+            "name": "Temengor"
+          }
+        ]
+      },
+      {
+        "code": "P055",
+        "name": "Lenggong",
+        "dun": [
+          {
+            "code": "N03",
+            "name": "Kenering"
+          },
+          {
+            "code": "N04",
+            "name": "Kota Tampan"
+          }
+        ]
+      },
+      {
+        "code": "P056",
+        "name": "Larut",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Selama"
+          },
+          {
+            "code": "N06",
+            "name": "Kubu Gajah"
+          },
+          {
+            "code": "N07",
+            "name": "Batu Kurau"
+          }
+        ]
+      },
+      {
+        "code": "P057",
+        "name": "Parit Buntar",
+        "dun": [
+          {
+            "code": "N08",
+            "name": "Titi Serong"
+          },
+          {
+            "code": "N09",
+            "name": "Kuala Kurau"
+          }
+        ]
+      },
+      {
+        "code": "P058",
+        "name": "Bagan Serai",
+        "dun": [
+          {
+            "code": "N10",
+            "name": "Alor Pongsu"
+          },
+          {
+            "code": "N11",
+            "name": "Gunong Semanggol"
+          },
+          {
+            "code": "N12",
+            "name": "Selinsing"
+          }
+        ]
+      },
+      {
+        "code": "P059",
+        "name": "Bukit Gantang",
+        "dun": [
+          {
+            "code": "N13",
+            "name": "Kuala Sepetang"
+          },
+          {
+            "code": "N14",
+            "name": "Changkat Jering"
+          },
+          {
+            "code": "N15",
+            "name": "Trong"
+          }
+        ]
+      },
+      {
+        "code": "P060",
+        "name": "Taiping",
+        "dun": [
+          {
+            "code": "N16",
+            "name": "Kamunting"
+          },
+          {
+            "code": "N17",
+            "name": "Pokok Assam"
+          },
+          {
+            "code": "N18",
+            "name": "Aulong"
+          }
+        ]
+      },
+      {
+        "code": "P061",
+        "name": "Padang Rengas",
+        "dun": [
+          {
+            "code": "N19",
+            "name": "Chenderoh"
+          },
+          {
+            "code": "N20",
+            "name": "Lubok Merbau"
+          }
+        ]
+      },
+      {
+        "code": "P062",
+        "name": "Sungai Siput",
+        "dun": [
+          {
+            "code": "N21",
+            "name": "Lintang"
+          },
+          {
+            "code": "N22",
+            "name": "Jalong"
+          }
+        ]
+      },
+      {
+        "code": "P063",
+        "name": "Tambun",
+        "dun": [
+          {
+            "code": "N23",
+            "name": "Manjoi"
+          },
+          {
+            "code": "N24",
+            "name": "Hulu Kinta"
+          }
+        ]
+      },
+      {
+        "code": "P064",
+        "name": "Ipoh Timor",
+        "dun": [
+          {
+            "code": "N25",
+            "name": "Canning"
+          },
+          {
+            "code": "N26",
+            "name": "Tebing Tinggi"
+          },
+          {
+            "code": "N27",
+            "name": "Pasir Pinji"
+          }
+        ]
+      },
+      {
+        "code": "P065",
+        "name": "Ipoh Barat",
+        "dun": [
+          {
+            "code": "N28",
+            "name": "Bercham"
+          },
+          {
+            "code": "N29",
+            "name": "Kepayang"
+          },
+          {
+            "code": "N30",
+            "name": "Buntong"
+          }
+        ]
+      },
+      {
+        "code": "P066",
+        "name": "Batu Gajah",
+        "dun": [
+          {
+            "code": "N31",
+            "name": "Jelapang"
+          },
+          {
+            "code": "N32",
+            "name": "Menglembu"
+          },
+          {
+            "code": "N33",
+            "name": "Tronoh"
+          }
+        ]
+      },
+      {
+        "code": "P067",
+        "name": "Kuala Kangsar",
+        "dun": [
+          {
+            "code": "N34",
+            "name": "Bukit Chandan"
+          },
+          {
+            "code": "N35",
+            "name": "Manong"
+          }
+        ]
+      },
+      {
+        "code": "P068",
+        "name": "Beruas",
+        "dun": [
+          {
+            "code": "N36",
+            "name": "Pengkalan Baharu"
+          },
+          {
+            "code": "N37",
+            "name": "Pantai Remis"
+          },
+          {
+            "code": "N38",
+            "name": "Astaka"
+          }
+        ]
+      },
+      {
+        "code": "P069",
+        "name": "Parit",
+        "dun": [
+          {
+            "code": "N39",
+            "name": "Belanja"
+          },
+          {
+            "code": "N40",
+            "name": "Bota"
+          }
+        ]
+      },
+      {
+        "code": "P070",
+        "name": "Kampar",
+        "dun": [
+          {
+            "code": "N41",
+            "name": "Malim Nawar"
+          },
+          {
+            "code": "N42",
+            "name": "Keranji"
+          },
+          {
+            "code": "N43",
+            "name": "Tualang Sekah"
+          }
+        ]
+      },
+      {
+        "code": "P071",
+        "name": "Gopeng",
+        "dun": [
+          {
+            "code": "N44",
+            "name": "Sungai Rapat"
+          },
+          {
+            "code": "N45",
+            "name": "Simpang Pulai"
+          },
+          {
+            "code": "N46",
+            "name": "Teja"
+          }
+        ]
+      },
+      {
+        "code": "P072",
+        "name": "Tapah",
+        "dun": [
+          {
+            "code": "N47",
+            "name": "Chenderiang"
+          },
+          {
+            "code": "N48",
+            "name": "Ayer Kuning"
+          }
+        ]
+      },
+      {
+        "code": "P073",
+        "name": "Pasir Salak",
+        "dun": [
+          {
+            "code": "N49",
+            "name": "Sungai Manik"
+          },
+          {
+            "code": "N50",
+            "name": "Kampong Gajah"
+          }
+        ]
+      },
+      {
+        "code": "P074",
+        "name": "Lumut",
+        "dun": [
+          {
+            "code": "N51",
+            "name": "Pasir Panjang"
+          },
+          {
+            "code": "N52",
+            "name": "Pangkor"
+          }
+        ]
+      },
+      {
+        "code": "P075",
+        "name": "Bagan Datuk",
+        "dun": [
+          {
+            "code": "N53",
+            "name": "Rungkup"
+          },
+          {
+            "code": "N54",
+            "name": "Hutan Melintang"
+          }
+        ]
+      },
+      {
+        "code": "P076",
+        "name": "Teluk Intan",
+        "dun": [
+          {
+            "code": "N55",
+            "name": "Pasir Bedamar"
+          },
+          {
+            "code": "N56",
+            "name": "Changkat Jong"
+          }
+        ]
+      },
+      {
+        "code": "P077",
+        "name": "Tanjong Malim",
+        "dun": [
+          {
+            "code": "N57",
+            "name": "Sungkai"
+          },
+          {
+            "code": "N58",
+            "name": "Slim"
+          },
+          {
+            "code": "N59",
+            "name": "Behrang"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pahang",
+    "parliament": [
+      {
+        "code": "P078",
+        "name": "Cameron Highlands",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Tanah Rata"
+          },
+          {
+            "code": "N02",
+            "name": "Jelai"
+          }
+        ]
+      },
+      {
+        "code": "P079",
+        "name": "Lipis",
+        "dun": [
+          {
+            "code": "N03",
+            "name": "Padang Tengku"
+          },
+          {
+            "code": "N04",
+            "name": "Cheka"
+          },
+          {
+            "code": "N05",
+            "name": "Benta"
+          }
+        ]
+      },
+      {
+        "code": "P080",
+        "name": "Raub",
+        "dun": [
+          {
+            "code": "N06",
+            "name": "Batu Talam"
+          },
+          {
+            "code": "N07",
+            "name": "Tras"
+          },
+          {
+            "code": "N08",
+            "name": "Dong"
+          }
+        ]
+      },
+      {
+        "code": "P081",
+        "name": "Jerantut",
+        "dun": [
+          {
+            "code": "N09",
+            "name": "Tahan"
+          },
+          {
+            "code": "N10",
+            "name": "Damak"
+          },
+          {
+            "code": "N11",
+            "name": "Pulau Tawar"
+          }
+        ]
+      },
+      {
+        "code": "P082",
+        "name": "Indera Mahkota",
+        "dun": [
+          {
+            "code": "N12",
+            "name": "Beserah"
+          },
+          {
+            "code": "N13",
+            "name": "Semambu"
+          }
+        ]
+      },
+      {
+        "code": "P083",
+        "name": "Kuantan",
+        "dun": [
+          {
+            "code": "N14",
+            "name": "Teruntum"
+          },
+          {
+            "code": "N15",
+            "name": "Tanjung Lumpur"
+          },
+          {
+            "code": "N16",
+            "name": "Inderapura"
+          }
+        ]
+      },
+      {
+        "code": "P084",
+        "name": "Paya Besar",
+        "dun": [
+          {
+            "code": "N17",
+            "name": "Sungai Lembing"
+          },
+          {
+            "code": "N18",
+            "name": "Lepar"
+          },
+          {
+            "code": "N19",
+            "name": "Panching"
+          }
+        ]
+      },
+      {
+        "code": "P085",
+        "name": "Pekan",
+        "dun": [
+          {
+            "code": "N20",
+            "name": "Pulau Manis"
+          },
+          {
+            "code": "N21",
+            "name": "Peramu Jaya"
+          },
+          {
+            "code": "N22",
+            "name": "Bebar"
+          },
+          {
+            "code": "N23",
+            "name": "Chini"
+          }
+        ]
+      },
+      {
+        "code": "P086",
+        "name": "Maran",
+        "dun": [
+          {
+            "code": "N24",
+            "name": "Luit"
+          },
+          {
+            "code": "N25",
+            "name": "Kuala Sentul"
+          },
+          {
+            "code": "N26",
+            "name": "Chenor"
+          }
+        ]
+      },
+      {
+        "code": "P087",
+        "name": "Kuala Krau",
+        "dun": [
+          {
+            "code": "N27",
+            "name": "Jenderak"
+          },
+          {
+            "code": "N28",
+            "name": "Kerdau"
+          },
+          {
+            "code": "N29",
+            "name": "Jengka"
+          }
+        ]
+      },
+      {
+        "code": "P088",
+        "name": "Temerloh",
+        "dun": [
+          {
+            "code": "N30",
+            "name": "Mentakab"
+          },
+          {
+            "code": "N31",
+            "name": "Lanchang"
+          },
+          {
+            "code": "N32",
+            "name": "Kuala Semantan"
+          }
+        ]
+      },
+      {
+        "code": "P089",
+        "name": "Bentong",
+        "dun": [
+          {
+            "code": "N33",
+            "name": "Bilut"
+          },
+          {
+            "code": "N34",
+            "name": "Ketari"
+          },
+          {
+            "code": "N35",
+            "name": "Sabai"
+          },
+          {
+            "code": "N36",
+            "name": "Pelangai"
+          }
+        ]
+      },
+      {
+        "code": "P090",
+        "name": "Bera",
+        "dun": [
+          {
+            "code": "N37",
+            "name": "Guai"
+          },
+          {
+            "code": "N38",
+            "name": "Triang"
+          },
+          {
+            "code": "N39",
+            "name": "Kemayan"
+          }
+        ]
+      },
+      {
+        "code": "P091",
+        "name": "Rompin",
+        "dun": [
+          {
+            "code": "N40",
+            "name": "Bukit Ibam"
+          },
+          {
+            "code": "N41",
+            "name": "Muadzam Shah"
+          },
+          {
+            "code": "N42",
+            "name": "Tioman"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Selangor",
+    "parliament": [
+      {
+        "code": "P092",
+        "name": "Sabak Bernam",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Sungai Air Tawar"
+          },
+          {
+            "code": "N02",
+            "name": "Sabak"
+          }
+        ]
+      },
+      {
+        "code": "P093",
+        "name": "Sungai Besar",
+        "dun": [
+          {
+            "code": "N03",
+            "name": "Sungai Panjang"
+          },
+          {
+            "code": "N04",
+            "name": "Sekinchan"
+          }
+        ]
+      },
+      {
+        "code": "P094",
+        "name": "Hulu Selangor",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Hulu Bernam"
+          },
+          {
+            "code": "N06",
+            "name": "Kuala Kubu Baharu"
+          },
+          {
+            "code": "N07",
+            "name": "Batang Kali"
+          }
+        ]
+      },
+      {
+        "code": "P095",
+        "name": "Tanjong Karang",
+        "dun": [
+          {
+            "code": "N08",
+            "name": "Sungai Burong"
+          },
+          {
+            "code": "N09",
+            "name": "Permatang"
+          }
+        ]
+      },
+      {
+        "code": "P096",
+        "name": "Kuala Selangor",
+        "dun": [
+          {
+            "code": "N10",
+            "name": "Bukit Melawati"
+          },
+          {
+            "code": "N11",
+            "name": "Ijok"
+          },
+          {
+            "code": "N12",
+            "name": "Jeram"
+          }
+        ]
+      },
+      {
+        "code": "P097",
+        "name": "Selayang",
+        "dun": [
+          {
+            "code": "N13",
+            "name": "Kuang"
+          },
+          {
+            "code": "N14",
+            "name": "Rawang"
+          },
+          {
+            "code": "N15",
+            "name": "Taman Templer"
+          }
+        ]
+      },
+      {
+        "code": "P098",
+        "name": "Gombak",
+        "dun": [
+          {
+            "code": "N16",
+            "name": "Sungai Tua"
+          },
+          {
+            "code": "N17",
+            "name": "Gombak Setia"
+          },
+          {
+            "code": "N18",
+            "name": "Hulu Kelang"
+          }
+        ]
+      },
+      {
+        "code": "P099",
+        "name": "Ampang",
+        "dun": [
+          {
+            "code": "N19",
+            "name": "Bukit Antarabangsa"
+          },
+          {
+            "code": "N20",
+            "name": "Lembah Jaya"
+          }
+        ]
+      },
+      {
+        "code": "P100",
+        "name": "Pandan",
+        "dun": [
+          {
+            "code": "N21",
+            "name": "Pandan Indah"
+          },
+          {
+            "code": "N22",
+            "name": "Teratai"
+          }
+        ]
+      },
+      {
+        "code": "P101",
+        "name": "Hulu Langat",
+        "dun": [
+          {
+            "code": "N23",
+            "name": "Dusun Tua"
+          },
+          {
+            "code": "N24",
+            "name": "Semenyih"
+          }
+        ]
+      },
+      {
+        "code": "P102",
+        "name": "Bangi",
+        "dun": [
+          {
+            "code": "N25",
+            "name": "Kajang"
+          },
+          {
+            "code": "N26",
+            "name": "Sungai Ramal"
+          },
+          {
+            "code": "N27",
+            "name": "Balakong"
+          }
+        ]
+      },
+      {
+        "code": "P103",
+        "name": "Puchong",
+        "dun": [
+          {
+            "code": "N28",
+            "name": "Seri Kembangan"
+          },
+          {
+            "code": "N29",
+            "name": "Seri Serdang"
+          }
+        ]
+      },
+      {
+        "code": "P104",
+        "name": "Subang",
+        "dun": [
+          {
+            "code": "N30",
+            "name": "Kinrara"
+          },
+          {
+            "code": "N31",
+            "name": "Subang Jaya"
+          }
+        ]
+      },
+      {
+        "code": "P105",
+        "name": "Petaling Jaya",
+        "dun": [
+          {
+            "code": "N32",
+            "name": "Seri Setia"
+          },
+          {
+            "code": "N33",
+            "name": "Taman Medan"
+          },
+          {
+            "code": "N34",
+            "name": "Bukit Gasing"
+          }
+        ]
+      },
+      {
+        "code": "P106",
+        "name": "Damansara",
+        "dun": [
+          {
+            "code": "N35",
+            "name": "Kampung Tunku"
+          },
+          {
+            "code": "N36",
+            "name": "Bandar Utama"
+          },
+          {
+            "code": "N37",
+            "name": "Bukit Lanjan"
+          }
+        ]
+      },
+      {
+        "code": "P107",
+        "name": "Sungai Buloh",
+        "dun": [
+          {
+            "code": "N38",
+            "name": "Paya Jaras"
+          },
+          {
+            "code": "N39",
+            "name": "Kota Damansara"
+          }
+        ]
+      },
+      {
+        "code": "P108",
+        "name": "Shah Alam",
+        "dun": [
+          {
+            "code": "N40",
+            "name": "Kota Anggerik"
+          },
+          {
+            "code": "N41",
+            "name": "Batu Tiga"
+          }
+        ]
+      },
+      {
+        "code": "P109",
+        "name": "Kapar",
+        "dun": [
+          {
+            "code": "N42",
+            "name": "Meru"
+          },
+          {
+            "code": "N43",
+            "name": "Sementa"
+          },
+          {
+            "code": "N44",
+            "name": "Selat Klang"
+          }
+        ]
+      },
+      {
+        "code": "P110",
+        "name": "Klang",
+        "dun": [
+          {
+            "code": "N45",
+            "name": "Bandar Baru Klang"
+          },
+          {
+            "code": "N46",
+            "name": "Pelabuhan Klang"
+          },
+          {
+            "code": "N47",
+            "name": "Pandamaran"
+          }
+        ]
+      },
+      {
+        "code": "P111",
+        "name": "Kota Raja",
+        "dun": [
+          {
+            "code": "N48",
+            "name": "Sentosa"
+          },
+          {
+            "code": "N49",
+            "name": "Sungai Kandis"
+          },
+          {
+            "code": "N50",
+            "name": "Kota Kemuning"
+          }
+        ]
+      },
+      {
+        "code": "P112",
+        "name": "Kuala Langat",
+        "dun": [
+          {
+            "code": "N51",
+            "name": "Sijangkang"
+          },
+          {
+            "code": "N52",
+            "name": "Banting"
+          },
+          {
+            "code": "N53",
+            "name": "Morib"
+          }
+        ]
+      },
+      {
+        "code": "P113",
+        "name": "Sepang",
+        "dun": [
+          {
+            "code": "N54",
+            "name": "Tanjong Sepat"
+          },
+          {
+            "code": "N55",
+            "name": "Dengkil"
+          },
+          {
+            "code": "N56",
+            "name": "Sungai Pelek"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "W.P. Kuala Lumpur",
+    "parliament": [
+      {
+        "code": "P114",
+        "name": "Kepong",
+        "dun": []
+      },
+      {
+        "code": "P115",
+        "name": "Batu",
+        "dun": []
+      },
+      {
+        "code": "P116",
+        "name": "Wangsa Maju",
+        "dun": []
+      },
+      {
+        "code": "P117",
+        "name": "Segambut",
+        "dun": []
+      },
+      {
+        "code": "P118",
+        "name": "Setiawangsa",
+        "dun": []
+      },
+      {
+        "code": "P119",
+        "name": "Titiwangsa",
+        "dun": []
+      },
+      {
+        "code": "P120",
+        "name": "Bukit Bintang",
+        "dun": []
+      },
+      {
+        "code": "P121",
+        "name": "Lembah Pantai",
+        "dun": []
+      },
+      {
+        "code": "P122",
+        "name": "Seputeh",
+        "dun": []
+      },
+      {
+        "code": "P123",
+        "name": "Cheras",
+        "dun": []
+      },
+      {
+        "code": "P124",
+        "name": "Bandar Tun Razak",
+        "dun": []
+      }
+    ]
+  },
+  {
+    "name": "W.P. Putrajaya",
+    "parliament": [
+      {
+        "code": "P125",
+        "name": "Putrajaya",
+        "dun": []
+      }
+    ]
+  },
+  {
+    "name": "Negeri Sembilan",
+    "parliament": [
+      {
+        "code": "P126",
+        "name": "Jelebu",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Chennah"
+          },
+          {
+            "code": "N02",
+            "name": "Pertang"
+          },
+          {
+            "code": "N03",
+            "name": "Sungai Lui"
+          },
+          {
+            "code": "N04",
+            "name": "Klawang"
+          }
+        ]
+      },
+      {
+        "code": "P127",
+        "name": "Jempol",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Serting"
+          },
+          {
+            "code": "N06",
+            "name": "Palong"
+          },
+          {
+            "code": "N07",
+            "name": "Jeram Padang"
+          },
+          {
+            "code": "N08",
+            "name": "Bahau"
+          }
+        ]
+      },
+      {
+        "code": "P128",
+        "name": "Seremban",
+        "dun": [
+          {
+            "code": "N09",
+            "name": "Lenggeng"
+          },
+          {
+            "code": "N10",
+            "name": "Nilai"
+          },
+          {
+            "code": "N11",
+            "name": "Lobak"
+          },
+          {
+            "code": "N12",
+            "name": "Temiang"
+          },
+          {
+            "code": "N13",
+            "name": "Sikamat"
+          },
+          {
+            "code": "N14",
+            "name": "Ampangan"
+          }
+        ]
+      },
+      {
+        "code": "P129",
+        "name": "Kuala Pilah",
+        "dun": [
+          {
+            "code": "N15",
+            "name": "Juasseh"
+          },
+          {
+            "code": "N16",
+            "name": "Seri Menanti"
+          },
+          {
+            "code": "N17",
+            "name": "Senaling"
+          },
+          {
+            "code": "N18",
+            "name": "Pilah"
+          },
+          {
+            "code": "N19",
+            "name": "Johol"
+          }
+        ]
+      },
+      {
+        "code": "P130",
+        "name": "Rasah",
+        "dun": [
+          {
+            "code": "N20",
+            "name": "Labu"
+          },
+          {
+            "code": "N21",
+            "name": "Bukit Kepayang"
+          },
+          {
+            "code": "N22",
+            "name": "Rahang"
+          },
+          {
+            "code": "N23",
+            "name": "Mambau"
+          },
+          {
+            "code": "N24",
+            "name": "Seremban Jaya"
+          }
+        ]
+      },
+      {
+        "code": "P131",
+        "name": "Rembau",
+        "dun": [
+          {
+            "code": "N25",
+            "name": "Paroi"
+          },
+          {
+            "code": "N26",
+            "name": "Chembong"
+          },
+          {
+            "code": "N27",
+            "name": "Rantau"
+          },
+          {
+            "code": "N28",
+            "name": "Kota"
+          }
+        ]
+      },
+      {
+        "code": "P132",
+        "name": "Port Dickson",
+        "dun": [
+          {
+            "code": "N29",
+            "name": "Chuah"
+          },
+          {
+            "code": "N30",
+            "name": "Lukut"
+          },
+          {
+            "code": "N31",
+            "name": "Bagan Pinang"
+          },
+          {
+            "code": "N32",
+            "name": "Linggi"
+          },
+          {
+            "code": "N33",
+            "name": "Sri Tanjung"
+          }
+        ]
+      },
+      {
+        "code": "P133",
+        "name": "Tampin",
+        "dun": [
+          {
+            "code": "N34",
+            "name": "Gemas"
+          },
+          {
+            "code": "N35",
+            "name": "Gemencheh"
+          },
+          {
+            "code": "N36",
+            "name": "Repah"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Melaka",
+    "parliament": [
+      {
+        "code": "P134",
+        "name": "Masjid Tanah",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Kuala Linggi"
+          },
+          {
+            "code": "N02",
+            "name": "Tanjung Bidara"
+          },
+          {
+            "code": "N03",
+            "name": "Ayer Limau"
+          },
+          {
+            "code": "N04",
+            "name": "Lendu"
+          },
+          {
+            "code": "N05",
+            "name": "Taboh Naning"
+          }
+        ]
+      },
+      {
+        "code": "P135",
+        "name": "Alor Gajah",
+        "dun": [
+          {
+            "code": "N06",
+            "name": "Rembia"
+          },
+          {
+            "code": "N07",
+            "name": "Gadek"
+          },
+          {
+            "code": "N08",
+            "name": "Machap Jaya"
+          },
+          {
+            "code": "N09",
+            "name": "Durian Tunggal"
+          },
+          {
+            "code": "N10",
+            "name": "Asahan"
+          }
+        ]
+      },
+      {
+        "code": "P136",
+        "name": "Tangga Batu",
+        "dun": [
+          {
+            "code": "N11",
+            "name": "Sungai Udang"
+          },
+          {
+            "code": "N12",
+            "name": "Pantai Kundor"
+          },
+          {
+            "code": "N13",
+            "name": "Paya Rumput"
+          },
+          {
+            "code": "N14",
+            "name": "Kelebang"
+          }
+        ]
+      },
+      {
+        "code": "P137",
+        "name": "Hang Tuah Jaya",
+        "dun": [
+          {
+            "code": "N15",
+            "name": "Pengkalan Batu"
+          },
+          {
+            "code": "N16",
+            "name": "Ayer Keroh"
+          },
+          {
+            "code": "N17",
+            "name": "Bukit Katil"
+          },
+          {
+            "code": "N18",
+            "name": "Ayer Molek"
+          }
+        ]
+      },
+      {
+        "code": "P138",
+        "name": "Kota Melaka",
+        "dun": [
+          {
+            "code": "N19",
+            "name": "Kesidang"
+          },
+          {
+            "code": "N20",
+            "name": "Kota Laksamana"
+          },
+          {
+            "code": "N21",
+            "name": "Duyong"
+          },
+          {
+            "code": "N22",
+            "name": "Bandar Hilir"
+          },
+          {
+            "code": "N23",
+            "name": "Telok Mas"
+          }
+        ]
+      },
+      {
+        "code": "P139",
+        "name": "Jasin",
+        "dun": [
+          {
+            "code": "N24",
+            "name": "Bemban"
+          },
+          {
+            "code": "N25",
+            "name": "Rim"
+          },
+          {
+            "code": "N26",
+            "name": "Serkam"
+          },
+          {
+            "code": "N27",
+            "name": "Merlimau"
+          },
+          {
+            "code": "N28",
+            "name": "Sungai Rambai"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johor",
+    "parliament": [
+      {
+        "code": "P140",
+        "name": "Segamat",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Buloh Kasap"
+          },
+          {
+            "code": "N02",
+            "name": "Jementah"
+          }
+        ]
+      },
+      {
+        "code": "P141",
+        "name": "Sekijang",
+        "dun": [
+          {
+            "code": "N03",
+            "name": "Pemanis"
+          },
+          {
+            "code": "N04",
+            "name": "Kemelah"
+          }
+        ]
+      },
+      {
+        "code": "P142",
+        "name": "Labis",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Tenang"
+          },
+          {
+            "code": "N06",
+            "name": "Bekok"
+          }
+        ]
+      },
+      {
+        "code": "P143",
+        "name": "Pagoh",
+        "dun": [
+          {
+            "code": "N07",
+            "name": "Bukit Kepong"
+          },
+          {
+            "code": "N08",
+            "name": "Bukit Pasir"
+          }
+        ]
+      },
+      {
+        "code": "P144",
+        "name": "Ledang",
+        "dun": [
+          {
+            "code": "N09",
+            "name": "Gambir"
+          },
+          {
+            "code": "N10",
+            "name": "Tangkak"
+          },
+          {
+            "code": "N11",
+            "name": "Serom"
+          }
+        ]
+      },
+      {
+        "code": "P145",
+        "name": "Bakri",
+        "dun": [
+          {
+            "code": "N12",
+            "name": "Bentayan"
+          },
+          {
+            "code": "N13",
+            "name": "Simpang Jeram"
+          },
+          {
+            "code": "N14",
+            "name": "Bukit Naning"
+          }
+        ]
+      },
+      {
+        "code": "P146",
+        "name": "Muar",
+        "dun": [
+          {
+            "code": "N15",
+            "name": "Maharani"
+          },
+          {
+            "code": "N16",
+            "name": "Sungai Balang"
+          }
+        ]
+      },
+      {
+        "code": "P147",
+        "name": "Parit Sulong",
+        "dun": [
+          {
+            "code": "N17",
+            "name": "Semerah"
+          },
+          {
+            "code": "N18",
+            "name": "Sri Medan"
+          }
+        ]
+      },
+      {
+        "code": "P148",
+        "name": "Ayer Hitam",
+        "dun": [
+          {
+            "code": "N19",
+            "name": "Yong Peng"
+          },
+          {
+            "code": "N20",
+            "name": "Semarang"
+          }
+        ]
+      },
+      {
+        "code": "P149",
+        "name": "Sri Gading",
+        "dun": [
+          {
+            "code": "N21",
+            "name": "Parit Yaani"
+          },
+          {
+            "code": "N22",
+            "name": "Parit Raja"
+          }
+        ]
+      },
+      {
+        "code": "P150",
+        "name": "Batu Pahat",
+        "dun": [
+          {
+            "code": "N23",
+            "name": "Penggaram"
+          },
+          {
+            "code": "N24",
+            "name": "Senggarang"
+          },
+          {
+            "code": "N25",
+            "name": "Rengit"
+          }
+        ]
+      },
+      {
+        "code": "P151",
+        "name": "Simpang Renggam",
+        "dun": [
+          {
+            "code": "N26",
+            "name": "Machap"
+          },
+          {
+            "code": "N27",
+            "name": "Layang-Layang"
+          }
+        ]
+      },
+      {
+        "code": "P152",
+        "name": "Kluang",
+        "dun": [
+          {
+            "code": "N28",
+            "name": "Mengkibol"
+          },
+          {
+            "code": "N29",
+            "name": "Mahkota"
+          }
+        ]
+      },
+      {
+        "code": "P153",
+        "name": "Sembrong",
+        "dun": [
+          {
+            "code": "N30",
+            "name": "Paloh"
+          },
+          {
+            "code": "N31",
+            "name": "Kahang"
+          }
+        ]
+      },
+      {
+        "code": "P154",
+        "name": "Mersing",
+        "dun": [
+          {
+            "code": "N32",
+            "name": "Endau"
+          },
+          {
+            "code": "N33",
+            "name": "Tenggaroh"
+          }
+        ]
+      },
+      {
+        "code": "P155",
+        "name": "Tenggara",
+        "dun": [
+          {
+            "code": "N34",
+            "name": "Panti"
+          },
+          {
+            "code": "N35",
+            "name": "Pasir Raja"
+          }
+        ]
+      },
+      {
+        "code": "P156",
+        "name": "Kota Tinggi",
+        "dun": [
+          {
+            "code": "N36",
+            "name": "Sedili"
+          },
+          {
+            "code": "N37",
+            "name": "Johor Lama"
+          }
+        ]
+      },
+      {
+        "code": "P157",
+        "name": "Pengerang",
+        "dun": [
+          {
+            "code": "N38",
+            "name": "Penawar"
+          },
+          {
+            "code": "N39",
+            "name": "Tanjung Surat"
+          }
+        ]
+      },
+      {
+        "code": "P158",
+        "name": "Tebrau",
+        "dun": [
+          {
+            "code": "N40",
+            "name": "Tiram"
+          },
+          {
+            "code": "N41",
+            "name": "Puteri Wangsa"
+          }
+        ]
+      },
+      {
+        "code": "P159",
+        "name": "Pasir Gudang",
+        "dun": [
+          {
+            "code": "N42",
+            "name": "Johor Jaya"
+          },
+          {
+            "code": "N43",
+            "name": "Permas"
+          }
+        ]
+      },
+      {
+        "code": "P160",
+        "name": "Johor Bahru",
+        "dun": [
+          {
+            "code": "N44",
+            "name": "Larkin"
+          },
+          {
+            "code": "N45",
+            "name": "Stulang"
+          }
+        ]
+      },
+      {
+        "code": "P161",
+        "name": "Pulai",
+        "dun": [
+          {
+            "code": "N46",
+            "name": "Perling"
+          },
+          {
+            "code": "N47",
+            "name": "Kempas"
+          }
+        ]
+      },
+      {
+        "code": "P162",
+        "name": "Iskandar Puteri",
+        "dun": [
+          {
+            "code": "N48",
+            "name": "Skudai"
+          },
+          {
+            "code": "N49",
+            "name": "Kota Iskandar"
+          }
+        ]
+      },
+      {
+        "code": "P163",
+        "name": "Kulai",
+        "dun": [
+          {
+            "code": "N50",
+            "name": "Bukit Permai"
+          },
+          {
+            "code": "N51",
+            "name": "Bukit Batu"
+          },
+          {
+            "code": "N52",
+            "name": "Senai"
+          }
+        ]
+      },
+      {
+        "code": "P164",
+        "name": "Pontian",
+        "dun": [
+          {
+            "code": "N53",
+            "name": "Benut"
+          },
+          {
+            "code": "N54",
+            "name": "Pulai Sebatang"
+          }
+        ]
+      },
+      {
+        "code": "P165",
+        "name": "Tanjung Piai",
+        "dun": [
+          {
+            "code": "N55",
+            "name": "Pekan Nanas"
+          },
+          {
+            "code": "N56",
+            "name": "Kukup"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "W.P. Labuan",
+    "parliament": [
+      {
+        "code": "P166",
+        "name": "Labuan",
+        "dun": []
+      }
+    ]
+  },
+  {
+    "name": "Sabah",
+    "parliament": [
+      {
+        "code": "P167",
+        "name": "Kudat",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Banggi"
+          },
+          {
+            "code": "N02",
+            "name": "Bengkoka"
+          },
+          {
+            "code": "N03",
+            "name": "Pitas"
+          },
+          {
+            "code": "N04",
+            "name": "Tanjong Kapor"
+          }
+        ]
+      },
+      {
+        "code": "P168",
+        "name": "Kota Marudu",
+        "dun": [
+          {
+            "code": "N05",
+            "name": "Matunggong"
+          },
+          {
+            "code": "N06",
+            "name": "Bandau"
+          },
+          {
+            "code": "N07",
+            "name": "Tandek"
+          }
+        ]
+      },
+      {
+        "code": "P169",
+        "name": "Kota Belud",
+        "dun": [
+          {
+            "code": "N08",
+            "name": "Pintasan"
+          },
+          {
+            "code": "N09",
+            "name": "Tempasuk"
+          },
+          {
+            "code": "N10",
+            "name": "Usukan"
+          },
+          {
+            "code": "N11",
+            "name": "Kadamaian"
+          }
+        ]
+      },
+      {
+        "code": "P170",
+        "name": "Tuaran",
+        "dun": [
+          {
+            "code": "N12",
+            "name": "Sulaman"
+          },
+          {
+            "code": "N13",
+            "name": "Pantai Dalit"
+          },
+          {
+            "code": "N14",
+            "name": "Tamparuli"
+          },
+          {
+            "code": "N15",
+            "name": "Kiulu"
+          }
+        ]
+      },
+      {
+        "code": "P171",
+        "name": "Sepanggar",
+        "dun": [
+          {
+            "code": "N16",
+            "name": "Karambunai"
+          },
+          {
+            "code": "N17",
+            "name": "Darau"
+          },
+          {
+            "code": "N18",
+            "name": "Inanam"
+          }
+        ]
+      },
+      {
+        "code": "P172",
+        "name": "Kota Kinabalu",
+        "dun": [
+          {
+            "code": "N19",
+            "name": "Likas"
+          },
+          {
+            "code": "N20",
+            "name": "Api-Api"
+          },
+          {
+            "code": "N21",
+            "name": "Luyang"
+          }
+        ]
+      },
+      {
+        "code": "P173",
+        "name": "Putatan",
+        "dun": [
+          {
+            "code": "N22",
+            "name": "Tanjung Aru"
+          },
+          {
+            "code": "N23",
+            "name": "Petagas"
+          },
+          {
+            "code": "N24",
+            "name": "Tanjung Keramat"
+          }
+        ]
+      },
+      {
+        "code": "P174",
+        "name": "Penampang",
+        "dun": [
+          {
+            "code": "N25",
+            "name": "Kapayan"
+          },
+          {
+            "code": "N26",
+            "name": "Moyog"
+          }
+        ]
+      },
+      {
+        "code": "P175",
+        "name": "Papar",
+        "dun": [
+          {
+            "code": "N27",
+            "name": "Limbahau"
+          },
+          {
+            "code": "N28",
+            "name": "Kawang"
+          },
+          {
+            "code": "N29",
+            "name": "Pantai Manis"
+          }
+        ]
+      },
+      {
+        "code": "P176",
+        "name": "Kimanis",
+        "dun": [
+          {
+            "code": "N30",
+            "name": "Bongawan"
+          },
+          {
+            "code": "N31",
+            "name": "Membakut"
+          }
+        ]
+      },
+      {
+        "code": "P177",
+        "name": "Beaufort",
+        "dun": [
+          {
+            "code": "N32",
+            "name": "Klias"
+          },
+          {
+            "code": "N33",
+            "name": "Kuala Penyu"
+          }
+        ]
+      },
+      {
+        "code": "P178",
+        "name": "Sipitang",
+        "dun": [
+          {
+            "code": "N34",
+            "name": "Lumadan"
+          },
+          {
+            "code": "N35",
+            "name": "Sindumin"
+          }
+        ]
+      },
+      {
+        "code": "P179",
+        "name": "Ranau",
+        "dun": [
+          {
+            "code": "N36",
+            "name": "Kundasang"
+          },
+          {
+            "code": "N37",
+            "name": "Karanaan"
+          },
+          {
+            "code": "N38",
+            "name": "Paginatan"
+          }
+        ]
+      },
+      {
+        "code": "P180",
+        "name": "Keningau",
+        "dun": [
+          {
+            "code": "N39",
+            "name": "Tambunan"
+          },
+          {
+            "code": "N40",
+            "name": "Bingkor"
+          },
+          {
+            "code": "N41",
+            "name": "Liawan"
+          }
+        ]
+      },
+      {
+        "code": "P181",
+        "name": "Tenom",
+        "dun": [
+          {
+            "code": "N42",
+            "name": "Melalap"
+          },
+          {
+            "code": "N43",
+            "name": "Kemabong"
+          }
+        ]
+      },
+      {
+        "code": "P182",
+        "name": "Pensiangan",
+        "dun": [
+          {
+            "code": "N44",
+            "name": "Tulid"
+          },
+          {
+            "code": "N45",
+            "name": "Sook"
+          },
+          {
+            "code": "N46",
+            "name": "Nabawan"
+          }
+        ]
+      },
+      {
+        "code": "P183",
+        "name": "Beluran",
+        "dun": [
+          {
+            "code": "N47",
+            "name": "Telupid"
+          },
+          {
+            "code": "N48",
+            "name": "Sugut"
+          },
+          {
+            "code": "N49",
+            "name": "Labuk"
+          }
+        ]
+      },
+      {
+        "code": "P184",
+        "name": "Libaran",
+        "dun": [
+          {
+            "code": "N50",
+            "name": "Gum-Gum"
+          },
+          {
+            "code": "N51",
+            "name": "Sungai Manila"
+          },
+          {
+            "code": "N52",
+            "name": "Sungai Sibuga"
+          }
+        ]
+      },
+      {
+        "code": "P185",
+        "name": "Batu Sapi",
+        "dun": [
+          {
+            "code": "N53",
+            "name": "Sekong"
+          },
+          {
+            "code": "N54",
+            "name": "Karamunting"
+          }
+        ]
+      },
+      {
+        "code": "P186",
+        "name": "Sandakan",
+        "dun": [
+          {
+            "code": "N55",
+            "name": "Elopura"
+          },
+          {
+            "code": "N56",
+            "name": "Tanjong Papat"
+          }
+        ]
+      },
+      {
+        "code": "P187",
+        "name": "Kinabatangan",
+        "dun": [
+          {
+            "code": "N57",
+            "name": "Kuamut"
+          },
+          {
+            "code": "N58",
+            "name": "Lamag"
+          },
+          {
+            "code": "N59",
+            "name": "Sukau"
+          }
+        ]
+      },
+      {
+        "code": "P188",
+        "name": "Lahad Datu",
+        "dun": [
+          {
+            "code": "N60",
+            "name": "Tungku"
+          },
+          {
+            "code": "N61",
+            "name": "Segama"
+          },
+          {
+            "code": "N62",
+            "name": "Silam"
+          },
+          {
+            "code": "N63",
+            "name": "Kunak"
+          }
+        ]
+      },
+      {
+        "code": "P189",
+        "name": "Semporna",
+        "dun": [
+          {
+            "code": "N64",
+            "name": "Sulabayan"
+          },
+          {
+            "code": "N65",
+            "name": "Senallang"
+          },
+          {
+            "code": "N66",
+            "name": "Bugaya"
+          }
+        ]
+      },
+      {
+        "code": "P190",
+        "name": "Tawau",
+        "dun": [
+          {
+            "code": "N67",
+            "name": "Balung"
+          },
+          {
+            "code": "N68",
+            "name": "Apas"
+          },
+          {
+            "code": "N69",
+            "name": "Sri Tanjong"
+          }
+        ]
+      },
+      {
+        "code": "P191",
+        "name": "Kalabakan",
+        "dun": [
+          {
+            "code": "N70",
+            "name": "Kukusan"
+          },
+          {
+            "code": "N71",
+            "name": "Tanjong Batu"
+          },
+          {
+            "code": "N72",
+            "name": "Merotai"
+          },
+          {
+            "code": "N73",
+            "name": "Sebatik"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sarawak",
+    "parliament": [
+      {
+        "code": "P192",
+        "name": "Mas Gading",
+        "dun": [
+          {
+            "code": "N01",
+            "name": "Opar"
+          },
+          {
+            "code": "N02",
+            "name": "Tasik Biru"
+          }
+        ]
+      },
+      {
+        "code": "P193",
+        "name": "Santubong",
+        "dun": [
+          {
+            "code": "N03",
+            "name": "Tanjong Datu"
+          },
+          {
+            "code": "N04",
+            "name": "Pantai Damai"
+          },
+          {
+            "code": "N05",
+            "name": "Demak Laut"
+          }
+        ]
+      },
+      {
+        "code": "P194",
+        "name": "Petra Jaya",
+        "dun": [
+          {
+            "code": "N06",
+            "name": "Tupong"
+          },
+          {
+            "code": "N07",
+            "name": "Samariang"
+          },
+          {
+            "code": "N08",
+            "name": "Satok"
+          }
+        ]
+      },
+      {
+        "code": "P195",
+        "name": "Bandar Kuching",
+        "dun": [
+          {
+            "code": "N09",
+            "name": "Padungan"
+          },
+          {
+            "code": "N10",
+            "name": "Pending"
+          },
+          {
+            "code": "N11",
+            "name": "Batu Lintang"
+          }
+        ]
+      },
+      {
+        "code": "P196",
+        "name": "Stampin",
+        "dun": [
+          {
+            "code": "N12",
+            "name": "Kota Sentosa"
+          },
+          {
+            "code": "N13",
+            "name": "Batu Kitang"
+          },
+          {
+            "code": "N14",
+            "name": "Batu Kawah"
+          }
+        ]
+      },
+      {
+        "code": "P197",
+        "name": "Kota Samarahan",
+        "dun": [
+          {
+            "code": "N15",
+            "name": "Asajaya"
+          },
+          {
+            "code": "N16",
+            "name": "Muara Tuang"
+          },
+          {
+            "code": "N17",
+            "name": "Stakan"
+          }
+        ]
+      },
+      {
+        "code": "P198",
+        "name": "Puncak Borneo",
+        "dun": [
+          {
+            "code": "N18",
+            "name": "Serembu"
+          },
+          {
+            "code": "N19",
+            "name": "Mambong"
+          },
+          {
+            "code": "N20",
+            "name": "Tarat"
+          }
+        ]
+      },
+      {
+        "code": "P199",
+        "name": "Serian",
+        "dun": [
+          {
+            "code": "N21",
+            "name": "Tebedu"
+          },
+          {
+            "code": "N22",
+            "name": "Kedup"
+          },
+          {
+            "code": "N23",
+            "name": "Bukit Semuja"
+          }
+        ]
+      },
+      {
+        "code": "P200",
+        "name": "Batang Sadong",
+        "dun": [
+          {
+            "code": "N24",
+            "name": "Sadong Jaya"
+          },
+          {
+            "code": "N25",
+            "name": "Simunjan"
+          },
+          {
+            "code": "N26",
+            "name": "Gedong"
+          }
+        ]
+      },
+      {
+        "code": "P201",
+        "name": "Batang Lupar",
+        "dun": [
+          {
+            "code": "N27",
+            "name": "Sebuyau"
+          },
+          {
+            "code": "N28",
+            "name": "Lingga"
+          },
+          {
+            "code": "N29",
+            "name": "Beting Maro"
+          }
+        ]
+      },
+      {
+        "code": "P202",
+        "name": "Sri Aman",
+        "dun": [
+          {
+            "code": "N30",
+            "name": "Balai Ringin"
+          },
+          {
+            "code": "N31",
+            "name": "Bukit Begunan"
+          },
+          {
+            "code": "N32",
+            "name": "Simanggang"
+          }
+        ]
+      },
+      {
+        "code": "P203",
+        "name": "Lubok Antu",
+        "dun": [
+          {
+            "code": "N33",
+            "name": "Engkilili"
+          },
+          {
+            "code": "N34",
+            "name": "Batang Ai"
+          }
+        ]
+      },
+      {
+        "code": "P204",
+        "name": "Betong",
+        "dun": [
+          {
+            "code": "N35",
+            "name": "Saribas"
+          },
+          {
+            "code": "N36",
+            "name": "Layar"
+          },
+          {
+            "code": "N37",
+            "name": "Bukit Saban"
+          }
+        ]
+      },
+      {
+        "code": "P205",
+        "name": "Saratok",
+        "dun": [
+          {
+            "code": "N38",
+            "name": "Kalaka"
+          },
+          {
+            "code": "N39",
+            "name": "Krian"
+          },
+          {
+            "code": "N40",
+            "name": "Kabong"
+          }
+        ]
+      },
+      {
+        "code": "P206",
+        "name": "Tanjong Manis",
+        "dun": [
+          {
+            "code": "N41",
+            "name": "Kuala Rajang"
+          },
+          {
+            "code": "N42",
+            "name": "Semop"
+          }
+        ]
+      },
+      {
+        "code": "P207",
+        "name": "Igan",
+        "dun": [
+          {
+            "code": "N43",
+            "name": "Daro"
+          },
+          {
+            "code": "N44",
+            "name": "Jemoreng"
+          }
+        ]
+      },
+      {
+        "code": "P208",
+        "name": "Sarikei",
+        "dun": [
+          {
+            "code": "N45",
+            "name": "Repok"
+          },
+          {
+            "code": "N46",
+            "name": "Meradong"
+          }
+        ]
+      },
+      {
+        "code": "P209",
+        "name": "Julau",
+        "dun": [
+          {
+            "code": "N47",
+            "name": "Pakan"
+          },
+          {
+            "code": "N48",
+            "name": "Meluan"
+          }
+        ]
+      },
+      {
+        "code": "P210",
+        "name": "Kanowit",
+        "dun": [
+          {
+            "code": "N49",
+            "name": "Ngemah"
+          },
+          {
+            "code": "N50",
+            "name": "Machan"
+          }
+        ]
+      },
+      {
+        "code": "P211",
+        "name": "Lanang",
+        "dun": [
+          {
+            "code": "N51",
+            "name": "Bukit Assek"
+          },
+          {
+            "code": "N52",
+            "name": "Dudong"
+          }
+        ]
+      },
+      {
+        "code": "P212",
+        "name": "Sibu",
+        "dun": [
+          {
+            "code": "N53",
+            "name": "Bawang Assan"
+          },
+          {
+            "code": "N54",
+            "name": "Pelawan"
+          },
+          {
+            "code": "N55",
+            "name": "Nangka"
+          }
+        ]
+      },
+      {
+        "code": "P213",
+        "name": "Mukah",
+        "dun": [
+          {
+            "code": "N56",
+            "name": "Dalat"
+          },
+          {
+            "code": "N57",
+            "name": "Tellian"
+          },
+          {
+            "code": "N58",
+            "name": "Balingian"
+          }
+        ]
+      },
+      {
+        "code": "P214",
+        "name": "Selangau",
+        "dun": [
+          {
+            "code": "N59",
+            "name": "Tamin"
+          },
+          {
+            "code": "N60",
+            "name": "Kakus"
+          }
+        ]
+      },
+      {
+        "code": "P215",
+        "name": "Kapit",
+        "dun": [
+          {
+            "code": "N61",
+            "name": "Pelagus"
+          },
+          {
+            "code": "N62",
+            "name": "Katibas"
+          },
+          {
+            "code": "N63",
+            "name": "Bukit Goram"
+          }
+        ]
+      },
+      {
+        "code": "P216",
+        "name": "Hulu Rajang",
+        "dun": [
+          {
+            "code": "N64",
+            "name": "Baleh"
+          },
+          {
+            "code": "N65",
+            "name": "Belaga"
+          },
+          {
+            "code": "N66",
+            "name": "Murum"
+          }
+        ]
+      },
+      {
+        "code": "P217",
+        "name": "Bintulu",
+        "dun": [
+          {
+            "code": "N67",
+            "name": "Jepak"
+          },
+          {
+            "code": "N68",
+            "name": "Tanjong Batu"
+          },
+          {
+            "code": "N69",
+            "name": "Kemena"
+          },
+          {
+            "code": "N70",
+            "name": "Samalaju"
+          }
+        ]
+      },
+      {
+        "code": "P218",
+        "name": "Sibuti",
+        "dun": [
+          {
+            "code": "N71",
+            "name": "Bekenu"
+          },
+          {
+            "code": "N72",
+            "name": "Lambir"
+          }
+        ]
+      },
+      {
+        "code": "P219",
+        "name": "Miri",
+        "dun": [
+          {
+            "code": "N73",
+            "name": "Piasau"
+          },
+          {
+            "code": "N74",
+            "name": "Pujut"
+          },
+          {
+            "code": "N75",
+            "name": "Senadin"
+          }
+        ]
+      },
+      {
+        "code": "P220",
+        "name": "Baram",
+        "dun": [
+          {
+            "code": "N76",
+            "name": "Marudi"
+          },
+          {
+            "code": "N77",
+            "name": "Telang Usan"
+          },
+          {
+            "code": "N78",
+            "name": "Mulu"
+          }
+        ]
+      },
+      {
+        "code": "P221",
+        "name": "Limbang",
+        "dun": [
+          {
+            "code": "N79",
+            "name": "Bukit Kota"
+          },
+          {
+            "code": "N80",
+            "name": "Batu Danau"
+          }
+        ]
+      },
+      {
+        "code": "P222",
+        "name": "Lawas",
+        "dun": [
+          {
+            "code": "N81",
+            "name": "Ba'kelalan"
+          },
+          {
+            "code": "N82",
+            "name": "Bukit Sari"
+          }
+        ]
+      }
+    ]
+  }
+]

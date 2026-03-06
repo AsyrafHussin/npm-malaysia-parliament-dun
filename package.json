@@ -1,0 +1,83 @@
+{
+  "name": "malaysia-parliament-dun",
+  "version": "1.0.0",
+  "description": "List of Malaysia Parliament (Parlimen) and State Assembly (DUN) constituencies based on GE15 2022 (JSON)",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --ci",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "format": "prettier --write --cache \"**/*.[tj]s?(x)\"",
+    "format-check": "prettier --check --cache \"**/*.[tj]s?(x)\"",
+    "check-types": "tsc --pretty --noEmit",
+    "clean": "rm -rf dist/ coverage/",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AsyrafHussin/npm-malaysia-parliament-dun.git"
+  },
+  "keywords": [
+    "malaysia",
+    "parliament",
+    "parlimen",
+    "dun",
+    "constituency",
+    "ge15",
+    "pru15"
+  ],
+  "type": "module",
+  "author": "Asyraf Hussin <asyrafhussin@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsyrafHussin/npm-malaysia-parliament-dun/issues"
+  },
+  "homepage": "https://github.com/AsyrafHussin/npm-malaysia-parliament-dun#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-typescript": "^7.25.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.28.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.30",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "babel-jest": "^29.7.0",
+    "esbuild": "^0.25.5",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.3.4",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
+  }
+}
