@@ -1,18 +1,19 @@
-# This workflow will run tests using node and then publish a package to npmjs when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+# Triggered by pushing a version tag (e.g. v1.0.0)
+# Runs tests → creates GitHub Release → publishes to npm
 
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,8 +23,18 @@ jobs:
       - run: npm ci
       - run: npm test
 
+  release:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+
   publish-npm:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
