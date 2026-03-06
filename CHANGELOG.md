@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-03-07
+
+### Added
+
+- `allParliamentData` export alias for `allData` — more descriptive name
+
+### Improved
+
+- `getDunsByState` — results are now cached for repeated calls
+- `findParliament` / `findDun` — batch array queries are now cached
+- `searchAll` — state name matching uses pre-lowercased array, eliminates `toLowerCase()` per iteration
+- Eliminated recursion in `findParliament` and `findDun` — extracted private single-item helpers to avoid redundant guard/cache checks on each array item
+
 ## [1.1.1] - 2026-03-07
 
 ### Fixed

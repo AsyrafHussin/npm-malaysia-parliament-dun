@@ -65,6 +65,7 @@ export interface SearchAllResult {
 }
 
 export const allData: State[] = data as State[];
+export const allParliamentData: State[] = allData;
 
 // ---------------------------------------------------------------------------
 // Preprocessed indices — built once at module load for O(1) lookups
@@ -93,6 +94,7 @@ interface DunEntry {
 }
 
 const allStateNames: string[] = [];
+const allStateNamesLower: string[] = [];
 const allParliamentEntries: ParliamentEntry[] = [];
 const allDunEntries: DunEntry[] = [];
 
@@ -109,6 +111,7 @@ const dunsByStateParliament = new Map<string, Dun[]>();          // "stateLower:
 for (const state of allData) {
   const stateLower = state.name.toLowerCase();
   allStateNames.push(state.name);
+  allStateNamesLower.push(stateLower);
   stateParliamentsMap.set(stateLower, state.parliament);
 
   for (const p of state.parliament) {
@@ -167,6 +170,7 @@ function setCache<T>(cache: Map<string, T>, key: string, value: T): T {
 const parliamentSearchCache = new Map<string, ParliamentSearchResult>();
 const dunSearchCache = new Map<string, DunSearchResult>();
 const searchAllCache = new Map<string, SearchAllResult>();
+const dunsByStateCache = new Map<string, Dun[]>();
 
 // ---------------------------------------------------------------------------
 // Exported functions
@@ -187,9 +191,12 @@ export const getDuns = (stateName: string | null, parliamentName: string | null)
 
 export const getDunsByState = (stateName: string | null): Dun[] => {
   if (!stateName) return [];
-  const parliaments = stateParliamentsMap.get(stateName.toLowerCase());
+  const stateLower = stateName.toLowerCase();
+  const cached = dunsByStateCache.get(stateLower);
+  if (cached) return cached;
+  const parliaments = stateParliamentsMap.get(stateLower);
   if (!parliaments) return [];
-  return parliaments.flatMap(p => p.dun);
+  return setCache(dunsByStateCache, stateLower, parliaments.flatMap(p => p.dun));
 };
 
 // Private single-item helper — no guard checks, no array handling, no recursion
@@ -224,6 +231,9 @@ export const findParliament = (
   if (!query) return { found: false };
 
   if (Array.isArray(query)) {
+    const cacheKey = `[${query.join(',')}]:${isExactMatch}`;
+    const cached = parliamentSearchCache.get(cacheKey);
+    if (cached) return cached;
     const results: ParliamentSearchResult['results'] = [];
     for (const q of query) {
       const r = _findParliamentOne(q, isExactMatch);
@@ -232,7 +242,7 @@ export const findParliament = (
         else if (r.state && r.code && r.name) results!.push({ state: r.state, code: r.code, name: r.name, dun: r.dun ?? [] });
       }
     }
-    return results!.length > 0 ? { found: true, results } : { found: false };
+    return setCache(parliamentSearchCache, cacheKey, results!.length > 0 ? { found: true, results } : { found: false });
   }
 
   return _findParliamentOne(query, isExactMatch);
@@ -275,6 +285,9 @@ export const findDun = (
   if (!query) return { found: false };
 
   if (Array.isArray(query)) {
+    const cacheKey = `[${query.join(',')}]:${isExactMatch}`;
+    const cached = dunSearchCache.get(cacheKey);
+    if (cached) return cached;
     const results: DunSearchResult['results'] = [];
     for (const q of query) {
       const r = _findDunOne(q, isExactMatch);
@@ -283,7 +296,7 @@ export const findDun = (
         else if (r.state && r.code && r.name) results!.push({ state: r.state, parliament: r.parliament!, parliamentCode: r.parliamentCode!, code: r.code, name: r.name });
       }
     }
-    return results!.length > 0 ? { found: true, results } : { found: false };
+    return setCache(dunSearchCache, cacheKey, results!.length > 0 ? { found: true, results } : { found: false });
   }
 
   return _findDunOne(query, isExactMatch);
@@ -368,8 +381,8 @@ export const searchAll = (query: string | null): SearchAllResult => {
   const parliaments: SearchAllResult['parliaments'] = [];
   const duns: SearchAllResult['duns'] = [];
 
-  for (const name of allStateNames) {
-    if (name.toLowerCase().includes(qLower)) states.push(name);
+  for (let i = 0; i < allStateNamesLower.length; i++) {
+    if (allStateNamesLower[i].includes(qLower)) states.push(allStateNames[i]);
   }
 
   for (const entry of allParliamentEntries) {
