@@ -66,61 +66,114 @@ export interface SearchAllResult {
 
 export const allData: State[] = data as State[];
 
-/**
- * Retrieves the list of all states.
- * @returns Array containing names of all states.
- */
-export const getStates = (): string[] => {
-  return allData.map(state => state.name);
-};
+// ---------------------------------------------------------------------------
+// Preprocessed indices — built once at module load for O(1) lookups
+// ---------------------------------------------------------------------------
 
-/**
- * Gets all parliament seats for a given state.
- * @param stateName - The name of the state.
- * @returns Array of parliament objects for the selected state. Empty array if state not found.
- */
+interface ParliamentEntry {
+  state: string;
+  code: string;
+  name: string;
+  dun: Dun[];
+}
+
+interface DunEntry {
+  state: string;
+  parliament: string;
+  parliamentCode: string;
+  code: string;
+  name: string;
+}
+
+const allStateNames: string[] = [];
+const allParliamentEntries: ParliamentEntry[] = [];
+const allDunEntries: DunEntry[] = [];
+
+// O(1) maps
+const stateParliamentsMap = new Map<string, Parliament[]>(); // stateLower → parliaments
+const parliamentByCode = new Map<string, ParliamentEntry>();  // pCodeLower → entry
+const parliamentByName = new Map<string, ParliamentEntry>();  // pNameLower → entry
+const dunByName = new Map<string, DunEntry>();                // dunNameLower → entry (names are unique)
+const dunsByCode = new Map<string, DunEntry[]>();             // dunCodeLower → entries (codes repeat per state)
+const parliamentToState = new Map<string, string>();          // pCode|pName lower → stateName
+const dunNameToParliament = new Map<string, ParliamentEntry>(); // dunNameLower → parliament entry
+
+for (const state of allData) {
+  const stateLower = state.name.toLowerCase();
+  allStateNames.push(state.name);
+  stateParliamentsMap.set(stateLower, state.parliament);
+
+  for (const p of state.parliament) {
+    const pEntry: ParliamentEntry = { state: state.name, code: p.code, name: p.name, dun: p.dun };
+    allParliamentEntries.push(pEntry);
+
+    parliamentByCode.set(p.code.toLowerCase(), pEntry);
+    parliamentByName.set(p.name.toLowerCase(), pEntry);
+    parliamentToState.set(p.code.toLowerCase(), state.name);
+    parliamentToState.set(p.name.toLowerCase(), state.name);
+
+    for (const dun of p.dun) {
+      const dEntry: DunEntry = {
+        state: state.name,
+        parliament: p.name,
+        parliamentCode: p.code,
+        code: dun.code,
+        name: dun.name
+      };
+      allDunEntries.push(dEntry);
+      dunByName.set(dun.name.toLowerCase(), dEntry);
+      dunNameToParliament.set(dun.name.toLowerCase(), pEntry);
+
+      const codeLower = dun.code.toLowerCase();
+      const existing = dunsByCode.get(codeLower);
+      if (existing) {
+        existing.push(dEntry);
+      } else {
+        dunsByCode.set(codeLower, [dEntry]);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Cache
+// ---------------------------------------------------------------------------
+
+const MAX_CACHE = 5000;
+function setCache<T>(cache: Map<string, T>, key: string, value: T): T {
+  if (cache.size >= MAX_CACHE) {
+    cache.delete(cache.keys().next().value!);
+  }
+  cache.set(key, value);
+  return value;
+}
+
+const parliamentSearchCache = new Map<string, ParliamentSearchResult>();
+const dunSearchCache = new Map<string, DunSearchResult>();
+const searchAllCache = new Map<string, SearchAllResult>();
+
+// ---------------------------------------------------------------------------
+// Exported functions
+// ---------------------------------------------------------------------------
+
+export const getStates = (): string[] => allStateNames;
+
 export const getParliaments = (stateName: string | null): Parliament[] => {
   if (!stateName) return [];
-
-  const stateObj = allData.find(
-    s => s.name.toLowerCase() === stateName.toLowerCase()
-  );
-
-  return stateObj ? stateObj.parliament : [];
+  return stateParliamentsMap.get(stateName.toLowerCase()) ?? [];
 };
 
-/**
- * Gets all DUN seats for a given state and parliament.
- * @param stateName - The name of the state.
- * @param parliamentName - The name or code of the parliament seat.
- * @returns Array of DUN objects. Empty array if not found.
- */
-export const getDuns = (
-  stateName: string | null,
-  parliamentName: string | null
-): Dun[] => {
+export const getDuns = (stateName: string | null, parliamentName: string | null): Dun[] => {
   if (!stateName || !parliamentName) return [];
 
-  const stateObj = allData.find(
-    s => s.name.toLowerCase() === stateName.toLowerCase()
-  );
-  if (!stateObj) return [];
+  const parliaments = stateParliamentsMap.get(stateName.toLowerCase());
+  if (!parliaments) return [];
 
-  const parliamentObj = stateObj.parliament.find(
-    p =>
-      p.name.toLowerCase() === parliamentName.toLowerCase() ||
-      p.code.toLowerCase() === parliamentName.toLowerCase()
-  );
-
-  return parliamentObj ? parliamentObj.dun : [];
+  const pLower = parliamentName.toLowerCase();
+  const p = parliaments.find(p => p.code.toLowerCase() === pLower || p.name.toLowerCase() === pLower);
+  return p ? p.dun : [];
 };
 
-/**
- * Finds parliament seat(s) by name or code.
- * @param query - The name or code to search for, or an array of queries.
- * @param isExactMatch - Exact match (true) or partial match (false). Defaults to true.
- * @returns Search result object.
- */
 export const findParliament = (
   query: string | string[] | null,
   isExactMatch: boolean = true
@@ -129,58 +182,39 @@ export const findParliament = (
   if (!query) return { found: false };
 
   if (Array.isArray(query)) {
-    const allResults: ParliamentSearchResult['results'] = [];
+    const results: ParliamentSearchResult['results'] = [];
     for (const q of query) {
-      const result = findParliament(q, isExactMatch);
-      if (result.found) {
-        if (result.results) {
-          allResults!.push(...result.results);
-        } else if (result.state && result.code && result.name) {
-          allResults!.push({
-            state: result.state,
-            code: result.code,
-            name: result.name,
-            dun: result.dun ?? []
-          });
-        }
+      const r = findParliament(q, isExactMatch);
+      if (r.found) {
+        if (r.results) results!.push(...r.results);
+        else if (r.state && r.code && r.name) results!.push({ state: r.state, code: r.code, name: r.name, dun: r.dun ?? [] });
       }
     }
-    return allResults!.length > 0
-      ? { found: true, results: allResults }
-      : { found: false };
+    return results!.length > 0 ? { found: true, results } : { found: false };
+  }
+
+  const cacheKey = `${query}:${isExactMatch}`;
+  const cached = parliamentSearchCache.get(cacheKey);
+  if (cached) return cached;
+
+  const qLower = query.toLowerCase();
+
+  if (isExactMatch) {
+    const entry = parliamentByCode.get(qLower) ?? parliamentByName.get(qLower);
+    if (!entry) return setCache(parliamentSearchCache, cacheKey, { found: false });
+    return setCache(parliamentSearchCache, cacheKey, { found: true, state: entry.state, code: entry.code, name: entry.name, dun: entry.dun });
   }
 
   const results: ParliamentSearchResult['results'] = [];
-  const queryLower = query.toLowerCase();
-
-  const matcher = (value: string) =>
-    isExactMatch
-      ? value.toLowerCase() === queryLower
-      : value.toLowerCase().includes(queryLower);
-
-  for (const state of allData) {
-    for (const p of state.parliament) {
-      if (matcher(p.name) || matcher(p.code)) {
-        results!.push({ state: state.name, code: p.code, name: p.name, dun: p.dun });
-      }
+  for (const entry of allParliamentEntries) {
+    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+      results!.push({ state: entry.state, code: entry.code, name: entry.name, dun: entry.dun });
     }
   }
-
-  if (!results!.length) return { found: false };
-
-  if (isExactMatch && results!.length === 1) {
-    return { found: true, ...results![0] };
-  }
-
-  return { found: true, results };
+  if (!results!.length) return setCache(parliamentSearchCache, cacheKey, { found: false });
+  return setCache(parliamentSearchCache, cacheKey, { found: true, results });
 };
 
-/**
- * Finds DUN seat(s) by name or code.
- * @param query - The name or code to search for, or an array of queries.
- * @param isExactMatch - Exact match (true) or partial match (false). Defaults to true.
- * @returns Search result object.
- */
 export const findDun = (
   query: string | string[] | null,
   isExactMatch: boolean = true
@@ -189,190 +223,115 @@ export const findDun = (
   if (!query) return { found: false };
 
   if (Array.isArray(query)) {
-    const allResults: DunSearchResult['results'] = [];
+    const results: DunSearchResult['results'] = [];
     for (const q of query) {
-      const result = findDun(q, isExactMatch);
-      if (result.found) {
-        if (result.results) {
-          allResults!.push(...result.results);
-        } else if (result.state && result.code && result.name) {
-          allResults!.push({
-            state: result.state,
-            parliament: result.parliament!,
-            parliamentCode: result.parliamentCode!,
-            code: result.code,
-            name: result.name
-          });
-        }
+      const r = findDun(q, isExactMatch);
+      if (r.found) {
+        if (r.results) results!.push(...r.results);
+        else if (r.state && r.code && r.name) results!.push({ state: r.state, parliament: r.parliament!, parliamentCode: r.parliamentCode!, code: r.code, name: r.name });
       }
     }
-    return allResults!.length > 0
-      ? { found: true, results: allResults }
-      : { found: false };
+    return results!.length > 0 ? { found: true, results } : { found: false };
+  }
+
+  const cacheKey = `${query}:${isExactMatch}`;
+  const cached = dunSearchCache.get(cacheKey);
+  if (cached) return cached;
+
+  const qLower = query.toLowerCase();
+
+  if (isExactMatch) {
+    // Try name first (unique), then code (may match multiple)
+    const byName = dunByName.get(qLower);
+    if (byName) return setCache(dunSearchCache, cacheKey, { found: true, ...byName });
+
+    const byCode = dunsByCode.get(qLower);
+    if (byCode && byCode.length === 1) return setCache(dunSearchCache, cacheKey, { found: true, ...byCode[0] });
+    if (byCode && byCode.length > 1) return setCache(dunSearchCache, cacheKey, { found: true, results: byCode });
+
+    return setCache(dunSearchCache, cacheKey, { found: false });
   }
 
   const results: DunSearchResult['results'] = [];
-  const queryLower = query.toLowerCase();
-
-  const matcher = (value: string) =>
-    isExactMatch
-      ? value.toLowerCase() === queryLower
-      : value.toLowerCase().includes(queryLower);
-
-  for (const state of allData) {
-    for (const p of state.parliament) {
-      for (const dun of p.dun) {
-        if (matcher(dun.name) || matcher(dun.code)) {
-          results!.push({
-            state: state.name,
-            parliament: p.name,
-            parliamentCode: p.code,
-            code: dun.code,
-            name: dun.name
-          });
-        }
-      }
+  for (const entry of allDunEntries) {
+    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+      results!.push({ state: entry.state, parliament: entry.parliament, parliamentCode: entry.parliamentCode, code: entry.code, name: entry.name });
     }
   }
-
-  if (!results!.length) return { found: false };
-
-  if (isExactMatch && results!.length === 1) {
-    return { found: true, ...results![0] };
-  }
-
-  return { found: true, results };
+  if (!results!.length) return setCache(dunSearchCache, cacheKey, { found: false });
+  return setCache(dunSearchCache, cacheKey, { found: true, results });
 };
 
-/**
- * Gets the state that contains a given parliament code or name.
- * @param parliament - The parliament code or name.
- * @returns The state name, or null if not found.
- */
 export const getStateByParliament = (parliament: string | null): string | null => {
   if (!parliament) return null;
-
-  const parliamentLower = parliament.toLowerCase();
-
-  for (const state of allData) {
-    const found = state.parliament.find(
-      p =>
-        p.code.toLowerCase() === parliamentLower ||
-        p.name.toLowerCase() === parliamentLower
-    );
-    if (found) return state.name;
-  }
-
-  return null;
+  return parliamentToState.get(parliament.toLowerCase()) ?? null;
 };
 
-/**
- * Gets the state and parliament that contains a given DUN code or name.
- * @param dun - The DUN code or name.
- * @returns Object with state and parliament info, or null if not found.
- */
 export const getStateByDun = (
   dun: string | null
 ): { state: string; parliament: string; parliamentCode: string } | null => {
   if (!dun) return null;
+  const entry = dunByName.get(dun.toLowerCase());
+  if (entry) return { state: entry.state, parliament: entry.parliament, parliamentCode: entry.parliamentCode };
 
-  const dunLower = dun.toLowerCase();
-
-  for (const state of allData) {
-    for (const p of state.parliament) {
-      const found = p.dun.find(
-        d =>
-          d.code.toLowerCase() === dunLower ||
-          d.name.toLowerCase() === dunLower
-      );
-      if (found) {
-        return {
-          state: state.name,
-          parliament: p.name,
-          parliamentCode: p.code
-        };
-      }
-    }
-  }
+  // Fallback: code lookup — return first match
+  const byCode = dunsByCode.get(dun.toLowerCase());
+  if (byCode && byCode.length > 0) return { state: byCode[0].state, parliament: byCode[0].parliament, parliamentCode: byCode[0].parliamentCode };
 
   return null;
 };
 
-/**
- * Gets the parliament seat that contains a given DUN code or name.
- * @param dun - The DUN code or name.
- * @returns Parliament object with state info, or null if not found.
- */
 export const getParliamentByDun = (
   dun: string | null
 ): { state: string; code: string; name: string; dun: Dun[] } | null => {
   if (!dun) return null;
+  const entry = dunNameToParliament.get(dun.toLowerCase());
+  if (entry) return { state: entry.state, code: entry.code, name: entry.name, dun: entry.dun };
 
-  const dunLower = dun.toLowerCase();
-
-  for (const state of allData) {
-    for (const p of state.parliament) {
-      const found = p.dun.find(
-        d =>
-          d.code.toLowerCase() === dunLower ||
-          d.name.toLowerCase() === dunLower
-      );
-      if (found) {
-        return { state: state.name, code: p.code, name: p.name, dun: p.dun };
-      }
-    }
+  // Fallback: code lookup
+  const byCode = dunsByCode.get(dun.toLowerCase());
+  if (byCode && byCode.length > 0) {
+    const first = byCode[0];
+    const pEntry = parliamentByCode.get(first.parliamentCode.toLowerCase());
+    if (pEntry) return { state: pEntry.state, code: pEntry.code, name: pEntry.name, dun: pEntry.dun };
   }
 
   return null;
 };
 
-/**
- * Universal search across states, parliaments, and DUNs.
- * @param query - The search query.
- * @returns Object containing matched states, parliaments, and DUNs.
- */
 export const searchAll = (query: string | null): SearchAllResult => {
   if (!query || query.trim().length === 0) {
     return { found: false, states: [], parliaments: [], duns: [] };
   }
 
-  const queryLower = query.toLowerCase().trim();
+  const cached = searchAllCache.get(query);
+  if (cached) return cached;
+
+  const qLower = query.toLowerCase().trim();
   const states: string[] = [];
   const parliaments: SearchAllResult['parliaments'] = [];
   const duns: SearchAllResult['duns'] = [];
 
-  for (const state of allData) {
-    if (state.name.toLowerCase().includes(queryLower)) {
-      states.push(state.name);
+  for (const name of allStateNames) {
+    if (name.toLowerCase().includes(qLower)) states.push(name);
+  }
+
+  for (const entry of allParliamentEntries) {
+    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+      parliaments.push({ state: entry.state, code: entry.code, name: entry.name, dun: entry.dun });
     }
+  }
 
-    for (const p of state.parliament) {
-      if (
-        p.name.toLowerCase().includes(queryLower) ||
-        p.code.toLowerCase().includes(queryLower)
-      ) {
-        parliaments.push({ state: state.name, code: p.code, name: p.name, dun: p.dun });
-      }
-
-      for (const dun of p.dun) {
-        if (
-          dun.name.toLowerCase().includes(queryLower) ||
-          dun.code.toLowerCase().includes(queryLower)
-        ) {
-          duns.push({
-            state: state.name,
-            parliament: p.name,
-            parliamentCode: p.code,
-            code: dun.code,
-            name: dun.name
-          });
-        }
-      }
+  for (const entry of allDunEntries) {
+    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+      duns.push({ state: entry.state, parliament: entry.parliament, parliamentCode: entry.parliamentCode, code: entry.code, name: entry.name });
     }
   }
 
   const hasResults = states.length > 0 || parliaments.length > 0 || duns.length > 0;
-  if (!hasResults) return { found: false, states: [], parliaments: [], duns: [] };
+  const result = hasResults
+    ? { found: true, states, parliaments, duns }
+    : { found: false, states: [], parliaments: [], duns: [] };
 
-  return { found: true, states, parliaments, duns };
+  return setCache(searchAllCache, query, result);
 };
