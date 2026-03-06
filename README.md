@@ -67,10 +67,10 @@ yarn add malaysia-parliament-dun
 
 ```html
 <!-- Regular version -->
-<script src="https://cdn.jsdelivr.net/npm/malaysia-parliament-dun@1.1.0/dist/malaysia-parliament-dun.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/malaysia-parliament-dun@1.1.1/dist/malaysia-parliament-dun.js"></script>
 
 <!-- Minified version -->
-<script src="https://cdn.jsdelivr.net/npm/malaysia-parliament-dun@1.1.0/dist/malaysia-parliament-dun.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/malaysia-parliament-dun@1.1.1/dist/malaysia-parliament-dun.min.js"></script>
 ```
 
 ## Imports
