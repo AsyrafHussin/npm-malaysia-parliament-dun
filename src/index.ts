@@ -192,25 +192,8 @@ export const getDunsByState = (stateName: string | null): Dun[] => {
   return parliaments.flatMap(p => p.dun);
 };
 
-export const findParliament = (
-  query: string | string[] | null,
-  isExactMatch: boolean = true
-): ParliamentSearchResult => {
-  if (typeof isExactMatch !== 'boolean') isExactMatch = true;
-  if (!query) return { found: false };
-
-  if (Array.isArray(query)) {
-    const results: ParliamentSearchResult['results'] = [];
-    for (const q of query) {
-      const r = findParliament(q, isExactMatch);
-      if (r.found) {
-        if (r.results) results!.push(...r.results);
-        else if (r.state && r.code && r.name) results!.push({ state: r.state, code: r.code, name: r.name, dun: r.dun ?? [] });
-      }
-    }
-    return results!.length > 0 ? { found: true, results } : { found: false };
-  }
-
+// Private single-item helper — no guard checks, no array handling, no recursion
+const _findParliamentOne = (query: string, isExactMatch: boolean): ParliamentSearchResult => {
   const cacheKey = `${query}:${isExactMatch}`;
   const cached = parliamentSearchCache.get(cacheKey);
   if (cached) return cached;
@@ -233,25 +216,30 @@ export const findParliament = (
   return setCache(parliamentSearchCache, cacheKey, { found: true, results });
 };
 
-export const findDun = (
+export const findParliament = (
   query: string | string[] | null,
   isExactMatch: boolean = true
-): DunSearchResult => {
+): ParliamentSearchResult => {
   if (typeof isExactMatch !== 'boolean') isExactMatch = true;
   if (!query) return { found: false };
 
   if (Array.isArray(query)) {
-    const results: DunSearchResult['results'] = [];
+    const results: ParliamentSearchResult['results'] = [];
     for (const q of query) {
-      const r = findDun(q, isExactMatch);
+      const r = _findParliamentOne(q, isExactMatch);
       if (r.found) {
         if (r.results) results!.push(...r.results);
-        else if (r.state && r.code && r.name) results!.push({ state: r.state, parliament: r.parliament!, parliamentCode: r.parliamentCode!, code: r.code, name: r.name });
+        else if (r.state && r.code && r.name) results!.push({ state: r.state, code: r.code, name: r.name, dun: r.dun ?? [] });
       }
     }
     return results!.length > 0 ? { found: true, results } : { found: false };
   }
 
+  return _findParliamentOne(query, isExactMatch);
+};
+
+// Private single-item helper — no guard checks, no array handling, no recursion
+const _findDunOne = (query: string, isExactMatch: boolean): DunSearchResult => {
   const cacheKey = `${query}:${isExactMatch}`;
   const cached = dunSearchCache.get(cacheKey);
   if (cached) return cached;
@@ -259,7 +247,6 @@ export const findDun = (
   const qLower = query.toLowerCase();
 
   if (isExactMatch) {
-    // Try name first (unique), then code (may match multiple)
     const byName = dunByName.get(qLower);
     if (byName) return setCache(dunSearchCache, cacheKey, { found: true, ...byName });
 
@@ -278,6 +265,28 @@ export const findDun = (
   }
   if (!results!.length) return setCache(dunSearchCache, cacheKey, { found: false });
   return setCache(dunSearchCache, cacheKey, { found: true, results });
+};
+
+export const findDun = (
+  query: string | string[] | null,
+  isExactMatch: boolean = true
+): DunSearchResult => {
+  if (typeof isExactMatch !== 'boolean') isExactMatch = true;
+  if (!query) return { found: false };
+
+  if (Array.isArray(query)) {
+    const results: DunSearchResult['results'] = [];
+    for (const q of query) {
+      const r = _findDunOne(q, isExactMatch);
+      if (r.found) {
+        if (r.results) results!.push(...r.results);
+        else if (r.state && r.code && r.name) results!.push({ state: r.state, parliament: r.parliament!, parliamentCode: r.parliamentCode!, code: r.code, name: r.name });
+      }
+    }
+    return results!.length > 0 ? { found: true, results } : { found: false };
+  }
+
+  return _findDunOne(query, isExactMatch);
 };
 
 export const getStateByParliament = (parliament: string | null): string | null => {
