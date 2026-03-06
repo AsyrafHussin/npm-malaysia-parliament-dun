@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2026-03-07
+
+### Fixed
+
+- Include `dist/` files in npm publish (workflow was missing `npm run build` step)
+- Auto-update CDN links in README on each release
+
 ## [1.1.0] - 2026-03-07
 
 ### Added
