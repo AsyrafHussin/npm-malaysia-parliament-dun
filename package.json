@@ -1,6 +1,6 @@
 {
   "name": "malaysia-parliament-dun",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "List of Malaysia Parliament (Parlimen) and State Assembly (DUN) constituencies based on GE15 2022 (JSON)",
   "engines": {
     "node": ">=18.0.0"
