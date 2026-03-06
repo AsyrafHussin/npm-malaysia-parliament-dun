@@ -75,6 +75,9 @@ interface ParliamentEntry {
   code: string;
   name: string;
   dun: Dun[];
+  // pre-lowercased for fast partial match — avoids repeated .toLowerCase() in hot loops
+  codeLower: string;
+  nameLower: string;
 }
 
 interface DunEntry {
@@ -83,6 +86,10 @@ interface DunEntry {
   parliamentCode: string;
   code: string;
   name: string;
+  // pre-lowercased for fast partial match and O(1) Map lookups
+  codeLower: string;
+  nameLower: string;
+  parliamentCodeLower: string;
 }
 
 const allStateNames: string[] = [];
@@ -90,13 +97,14 @@ const allParliamentEntries: ParliamentEntry[] = [];
 const allDunEntries: DunEntry[] = [];
 
 // O(1) maps
-const stateParliamentsMap = new Map<string, Parliament[]>(); // stateLower → parliaments
-const parliamentByCode = new Map<string, ParliamentEntry>();  // pCodeLower → entry
-const parliamentByName = new Map<string, ParliamentEntry>();  // pNameLower → entry
-const dunByName = new Map<string, DunEntry>();                // dunNameLower → entry (names are unique)
-const dunsByCode = new Map<string, DunEntry[]>();             // dunCodeLower → entries (codes repeat per state)
-const parliamentToState = new Map<string, string>();          // pCode|pName lower → stateName
-const dunNameToParliament = new Map<string, ParliamentEntry>(); // dunNameLower → parliament entry
+const stateParliamentsMap = new Map<string, Parliament[]>();    // stateLower → parliaments
+const parliamentByCode = new Map<string, ParliamentEntry>();     // pCodeLower → entry
+const parliamentByName = new Map<string, ParliamentEntry>();     // pNameLower → entry
+const dunByName = new Map<string, DunEntry>();                   // dunNameLower → entry (names are unique)
+const dunsByCode = new Map<string, DunEntry[]>();                // dunCodeLower → entries (codes repeat per state)
+const parliamentToState = new Map<string, string>();             // pCode|pName lower → stateName
+const dunNameToParliament = new Map<string, ParliamentEntry>();  // dunNameLower → parliament entry
+const dunsByStateParliament = new Map<string, Dun[]>();          // "stateLower:pLower" → dun[] for O(1) getDuns
 
 for (const state of allData) {
   const stateLower = state.name.toLowerCase();
@@ -104,32 +112,40 @@ for (const state of allData) {
   stateParliamentsMap.set(stateLower, state.parliament);
 
   for (const p of state.parliament) {
-    const pEntry: ParliamentEntry = { state: state.name, code: p.code, name: p.name, dun: p.dun };
+    const pCodeLower = p.code.toLowerCase();
+    const pNameLower = p.name.toLowerCase();
+    const pEntry: ParliamentEntry = { state: state.name, code: p.code, name: p.name, dun: p.dun, codeLower: pCodeLower, nameLower: pNameLower };
     allParliamentEntries.push(pEntry);
 
-    parliamentByCode.set(p.code.toLowerCase(), pEntry);
-    parliamentByName.set(p.name.toLowerCase(), pEntry);
-    parliamentToState.set(p.code.toLowerCase(), state.name);
-    parliamentToState.set(p.name.toLowerCase(), state.name);
+    parliamentByCode.set(pCodeLower, pEntry);
+    parliamentByName.set(pNameLower, pEntry);
+    parliamentToState.set(pCodeLower, state.name);
+    parliamentToState.set(pNameLower, state.name);
+    dunsByStateParliament.set(`${stateLower}:${pCodeLower}`, p.dun);
+    dunsByStateParliament.set(`${stateLower}:${pNameLower}`, p.dun);
 
     for (const dun of p.dun) {
+      const dunCodeLower = dun.code.toLowerCase();
+      const dunNameLower = dun.name.toLowerCase();
       const dEntry: DunEntry = {
         state: state.name,
         parliament: p.name,
         parliamentCode: p.code,
         code: dun.code,
-        name: dun.name
+        name: dun.name,
+        codeLower: dunCodeLower,
+        nameLower: dunNameLower,
+        parliamentCodeLower: pCodeLower
       };
       allDunEntries.push(dEntry);
-      dunByName.set(dun.name.toLowerCase(), dEntry);
-      dunNameToParliament.set(dun.name.toLowerCase(), pEntry);
+      dunByName.set(dunNameLower, dEntry);
+      dunNameToParliament.set(dunNameLower, pEntry);
 
-      const codeLower = dun.code.toLowerCase();
-      const existing = dunsByCode.get(codeLower);
+      const existing = dunsByCode.get(dunCodeLower);
       if (existing) {
         existing.push(dEntry);
       } else {
-        dunsByCode.set(codeLower, [dEntry]);
+        dunsByCode.set(dunCodeLower, [dEntry]);
       }
     }
   }
@@ -165,13 +181,8 @@ export const getParliaments = (stateName: string | null): Parliament[] => {
 
 export const getDuns = (stateName: string | null, parliamentName: string | null): Dun[] => {
   if (!stateName || !parliamentName) return [];
-
-  const parliaments = stateParliamentsMap.get(stateName.toLowerCase());
-  if (!parliaments) return [];
-
-  const pLower = parliamentName.toLowerCase();
-  const p = parliaments.find(p => p.code.toLowerCase() === pLower || p.name.toLowerCase() === pLower);
-  return p ? p.dun : [];
+  const key = `${stateName.toLowerCase()}:${parliamentName.toLowerCase()}`;
+  return dunsByStateParliament.get(key) ?? [];
 };
 
 export const findParliament = (
@@ -207,7 +218,7 @@ export const findParliament = (
 
   const results: ParliamentSearchResult['results'] = [];
   for (const entry of allParliamentEntries) {
-    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+    if (entry.nameLower.includes(qLower) || entry.codeLower.includes(qLower)) {
       results!.push({ state: entry.state, code: entry.code, name: entry.name, dun: entry.dun });
     }
   }
@@ -254,7 +265,7 @@ export const findDun = (
 
   const results: DunSearchResult['results'] = [];
   for (const entry of allDunEntries) {
-    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+    if (entry.nameLower.includes(qLower) || entry.codeLower.includes(qLower)) {
       results!.push({ state: entry.state, parliament: entry.parliament, parliamentCode: entry.parliamentCode, code: entry.code, name: entry.name });
     }
   }
@@ -288,11 +299,11 @@ export const getParliamentByDun = (
   const entry = dunNameToParliament.get(dun.toLowerCase());
   if (entry) return { state: entry.state, code: entry.code, name: entry.name, dun: entry.dun };
 
-  // Fallback: code lookup
+  // Fallback: code lookup — use pre-lowercased parliamentCodeLower for O(1) Map lookup
   const byCode = dunsByCode.get(dun.toLowerCase());
   if (byCode && byCode.length > 0) {
     const first = byCode[0];
-    const pEntry = parliamentByCode.get(first.parliamentCode.toLowerCase());
+    const pEntry = parliamentByCode.get(first.parliamentCodeLower);
     if (pEntry) return { state: pEntry.state, code: pEntry.code, name: pEntry.name, dun: pEntry.dun };
   }
 
@@ -317,13 +328,13 @@ export const searchAll = (query: string | null): SearchAllResult => {
   }
 
   for (const entry of allParliamentEntries) {
-    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+    if (entry.nameLower.includes(qLower) || entry.codeLower.includes(qLower)) {
       parliaments.push({ state: entry.state, code: entry.code, name: entry.name, dun: entry.dun });
     }
   }
 
   for (const entry of allDunEntries) {
-    if (entry.name.toLowerCase().includes(qLower) || entry.code.toLowerCase().includes(qLower)) {
+    if (entry.nameLower.includes(qLower) || entry.codeLower.includes(qLower)) {
       duns.push({ state: entry.state, parliament: entry.parliament, parliamentCode: entry.parliamentCode, code: entry.code, name: entry.name });
     }
   }
