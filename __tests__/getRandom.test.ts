@@ -1,4 +1,4 @@
-import { getRandomState, getRandomParliament, getRandomDun } from '../src/index';
+import { getRandomState, getRandomParliament, getRandomDun, getStates } from '../src/index';
 
 describe('getRandomState', () => {
   it('should return a non-empty string', () => {
@@ -9,9 +9,7 @@ describe('getRandomState', () => {
 
   it('should return a valid state name', () => {
     const result = getRandomState();
-    expect(['Johor', 'Kedah', 'Kelantan', 'Melaka', 'Negeri Sembilan', 'Pahang',
-      'Perak', 'Perlis', 'Pulau Pinang', 'Sabah', 'Sarawak', 'Selangor',
-      'Terengganu', 'Wp Kuala Lumpur', 'Wp Labuan', 'Wp Putrajaya']).toContain(result);
+    expect(getStates()).toContain(result);
   });
 });
 
